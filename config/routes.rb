@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'cards#select'
+  root to: 'cards#show'
 
-  get 'next_card', to: 'cards#next_card'
+  get 'swipe', to: 'cards#swipe'
+
+  get 'out_of_cards', to: 'cards#out_of_cards'
 
   get 'sessions/create'
 
