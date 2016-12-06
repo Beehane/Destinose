@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  length: MyString
+  dep_lat: 1.5
+  dep_lng: 1.5
+  dest_lat: 1.5
+  dest_lng: 1.5
+  ResultCard: one
+
+two:
+  length: MyString
+  dep_lat: 1.5
+  dep_lng: 1.5
+  dest_lat: 1.5
+  dest_lng: 1.5
+  ResultCard: two
