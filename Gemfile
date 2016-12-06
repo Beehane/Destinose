@@ -32,8 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-sass', '~> 4.7'
-gem 'simple_form', '~> 3.3', '>= 3.3.1'
+# gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'autoprefixer-rails', '~> 6.5', '>= 6.5.3'
+
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
