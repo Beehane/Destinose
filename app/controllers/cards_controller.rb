@@ -18,8 +18,17 @@ class CardsController < ApplicationController
   end
 
   def parse_cookies
-    @liked = JSON.parse(cookies[:liked] || "[]")
-    @disliked = JSON.parse(cookies[:disliked] || "[]")
+    if cookies[:liked].blank?
+      @liked = []
+    else
+      @liked = JSON.parse(cookies[:liked])
+    end
+
+    if cookies[:disliked].blank?
+      @disliked = []
+    else
+      @disliked = JSON.parse(cookies[:disliked])
+    end
   end
 
   def next_card
