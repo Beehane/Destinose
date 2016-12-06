@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'cards#select'
 
+  get 'next_card', to: 'cards#next_card'
+
   get 'sessions/create'
 
   get 'sessions/destroy'

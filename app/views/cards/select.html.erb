@@ -1,2 +1,13 @@
-<h1>Cards#select</h1>
-<p>Find me in app/views/cards/select.html.erb</p>
+<center>
+<h1>Destinosé</h1>
+<%= cl_image_tag(@new_card.image, height: 500, width: 500, crop: :fill)%>
+<table>
+<tr>
+  <td><%= link_to "No", cards_select_path %></td>
+  <td><%= link_to "Yes", cards_select_path %></td>
+</tr>
+</table>
+
+<p style="float: right; padding-right: 50px;">Current Strength: XX%</p>
+
+</center>
