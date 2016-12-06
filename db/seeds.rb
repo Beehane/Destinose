@@ -11,7 +11,7 @@ Card.create(
   lat: -36.84846,
   lng: 174.763332,
   description: "A view from Mount Roskill",
-  image: "0013_w7vqx8.jpg",
+  image: "0001_wtzczu.jpg",
   )
 
 Card.create(
@@ -39,19 +39,11 @@ Card.create(
   )
 
 Card.create(
-  name: "Auckland, New Zealand",
-  lat: -36.84846,
-  lng: 174.763332,
-  description: "A view from Mount Roskill",
-  image: "0013_w7vqx8.jpg",
-  )
-
-Card.create(
   name: "Semien Mountains, Ethiopia",
   lat: 13.301634,
   lng: 38.295738,
   description: "A resourcing trip for nature lovers",
-  image: "0013_w7vqx8.jpg",
+  image: "0005_la0kl2.jpg",
   )
 
 Card.create(
@@ -99,7 +91,7 @@ Card.create(
   lat: -13.163141,
   lng: -72.544963,
   description: "Your one and only immersion into the sacred world of Incas",
-  image: "0013_w7vqx8.jpg",
+  image: "0011_oqdju0.jpg",
   )
 
 Card.create(
@@ -115,7 +107,7 @@ Card.create(
   lat: 10.391049,
   lng: -75.479426,
   description: "Witness history in the colorful colonial streets of Cartagena",
-  image: "0012_cyh4ik.jpg",
+  image: "0013_w7vqx8.jpg",
   )
 
 Card.create(
@@ -123,6 +115,6 @@ Card.create(
   lat: 35.711877,
   lng: 139.796697,
   description: "Deep dive into vibrant capital of Japan",
-  image: "0012_cyh4ik.jpg",
+  image: "0014_gvmbxp.jpg",
   )
 
