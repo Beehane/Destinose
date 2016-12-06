@@ -31,6 +31,10 @@ class CardsController < ApplicationController
     end
   end
 
+  def current_strength
+    @current_strength = (@liked.count.to_f / 50 * 100)
+  end
+
   def next_card
     @all_card_ids = []
     Card.all.each { |x| @all_card_ids << x.id }
