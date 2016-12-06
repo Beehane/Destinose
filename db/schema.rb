@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206114124) do
+ActiveRecord::Schema.define(version: 20161206142914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,25 +34,26 @@ ActiveRecord::Schema.define(version: 20161206114124) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "result_cards", force: :cascade do |t|
-    t.integer  "result_id"
-    t.integer  "card_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["card_id"], name: "index_result_cards_on_card_id", using: :btree
-    t.index ["result_id"], name: "index_result_cards_on_result_id", using: :btree
-  end
-
-  create_table "results", force: :cascade do |t|
+  create_table "recommendations", force: :cascade do |t|
     t.string   "length"
     t.float    "dep_lat"
     t.float    "dep_lng"
     t.float    "dest_lat"
     t.float    "dest_lng"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "result_card_id"
-    t.index ["result_card_id"], name: "index_results_on_result_card_id", using: :btree
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recommendations_on_user_id", using: :btree
+  end
+
+  create_table "swipes", force: :cascade do |t|
+    t.integer  "card_id"
+    t.integer  "user_id"
+    t.boolean  "liked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_swipes_on_card_id", using: :btree
+    t.index ["user_id"], name: "index_swipes_on_user_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|
@@ -82,8 +83,8 @@ ActiveRecord::Schema.define(version: 20161206114124) do
 
   add_foreign_key "card_tags", "cards"
   add_foreign_key "card_tags", "tags"
-  add_foreign_key "result_cards", "cards"
-  add_foreign_key "result_cards", "results"
-  add_foreign_key "results", "result_cards"
+  add_foreign_key "recommendations", "users"
+  add_foreign_key "swipes", "cards"
+  add_foreign_key "swipes", "users"
   add_foreign_key "tags", "cards"
 end
