@@ -32,7 +32,7 @@ class CardsController < ApplicationController
   end
 
   def current_strength
-    @current_strength = (@liked.count.to_f / 50 * 100)
+    @current_strength = (@liked.count.to_f / 50 * 100).round
   end
 
   def next_card
@@ -42,9 +42,8 @@ class CardsController < ApplicationController
     if (@all_card_ids - @seen) == []
       redirect_to out_of_cards_path
     else
-      @next_card_id = (@all_card_ids - @seen).sample
-      redirect_to cards_show_path(@next_card_id)
+      next_card_id = (@all_card_ids - @seen).sample
+      redirect_to cards_show_path(next_card_id)
     end
   end
-
 end
