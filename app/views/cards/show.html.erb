@@ -1,17 +1,16 @@
 <center>
-<h1>Destinosé</h1>
 <%= cl_image_tag(@current_card.image, height: 500, width: 500, crop: :fill, id: @current_card.id)%>
 <p>image ID: <%= @current_card.id %></p>
 <table>
 <tr>
-  <td><%= link_to "No", swipe_path(liked: 0, card_id: @current_card.id) %></td>
-  <td><%= link_to "Yes", swipe_path(liked: 1, card_id: @current_card.id) %></td>
+  <td><h3><%= link_to "No", swipe_path(liked: 0, card_id: @current_card.id) %></h3></td>
+  <td><h3><%= link_to "Yes", swipe_path(liked: 1, card_id: @current_card.id) %></h3></td>
 </tr>
 </table>
 
-<h3><%= link_to "find my destination", results_path if @current_strength >= 4 %></h3>
+<h5><%= link_to "find my destination", results_path if @current_strength >= 4 %></h5>
 
 
-<h3 style="float: right; padding: 0 50px 50px;">Current Strength: <%= @current_strength %>&percnt;</h3>
+<h3 class="strength">Current Strength: <%= @current_strength %>&percnt;</h3>
 
 </center>

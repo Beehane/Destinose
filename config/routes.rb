@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
   get 'recommendations/pages'
 
-  # root to: 'cards#select'
-
   root to: 'cards#show'
 
   resources 'cards', only: [:show]
 
-  get 'start', to: 'cards#home'
-
+  get 'start', to: 'cards#home' #clears the cookies
 
   get 'swipe', to: 'cards#swipe'
 
@@ -17,8 +14,6 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'sessions/destroy'
-
-  get 'cards/select'
 
   get 'results', to: 'recommendations#show'
 
