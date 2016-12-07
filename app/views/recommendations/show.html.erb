@@ -1,44 +1,34 @@
-<head>
-
+<div class="row-fluid">
+  <div class="col-md-12">
+<div id="map" style='width: 100%; height: 600px;'></div>
+</div>
   <h1>Check out your results</h1>
-  <meta charset="utf-8">
-  <style>
-      /* Always set the map height explicitly to define the size of the div
-      * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-</head>
+</div>
 
-<!-- <div id="map" style="width: 100%; height: 600px;"> </div>
+<% @recommendations.each do |recommendation| %>
+<%= recommendation.longitude %>
+<%= recommendation.latitude %>
+<% end %>
+
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
-$(document).ready(function() {
-var handler = Gmaps.build('Google');
-handler.buildMap({internal: {id:'map'}}, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
-}
-});
-});
-<% end %> -->
-
-<%= javascript_tag do %>
-  $(document).ready(function() {
-    alert('<%= j @alert_message %>');
+  $(document).on('ready', function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function(){
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
   });
+<% end %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+alert('The javascript is working');
+});
 <% end %>
 <% end %>
