@@ -9,7 +9,7 @@
 </tr>
 </table>
 
-<h3><%= link_to "find my destination", results_path if @current_strength > 10 %></h3>
+<h3><%= link_to "find my destination", results_path if @current_strength >= 4 %></h3>
 
 <h3 style="float: right; padding: 0 50px 50px;">Current Strength: <%= @current_strength %>&percnt;</h3>
 
