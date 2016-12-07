@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
 
   def show(card_id = Card.all.sample.id)
-    @new_card = Card.find(card_id)
+    @current_card = Card.find(card_id)
   end
 
   def swipe
@@ -46,4 +46,14 @@ class CardsController < ApplicationController
       redirect_to cards_show_path(next_card_id)
     end
   end
+
+  # private
+
+  # def set_card
+  #   @card = Card.find(params[:id])
+  # end
+
+  # def card_params
+  #   params.require(:card).permit(:id, :image, :description, :lat, :lng)
+  # end
 end
