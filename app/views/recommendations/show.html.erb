@@ -1,8 +1,9 @@
+  <h5 class="text-center">check out your results</h5>
 <div class="row-fluid">
   <div class="col-md-12">
     <div id="map" style='width: 100%; height: 600px;'></div>
   </div>
-  <h1>Check out your results</h1>
+
 </div>
 
 <% @recommendations.each do |recommendation| %>
@@ -29,50 +30,4 @@
 });
 <% end %>
 
-<!-- function toggleBounce() {
-if (marker.getAnimation() !== null) {
-marker.setAnimation(null);
-} else {
-marker.setAnimation(google.maps.Animation.BOUNCE);
-}
-} -->
-<!--
-<%# if false %>
-
-<script>
-
-  <%#= @hotspot = @recommendations.select(@liked.max)%>
-  <% #end %>
-
-  function initMap() {
-    var myLatlng = {lat: @hotspot.latitude, lng: @hotspot.longitude};
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: myLatlng
-    });
-
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Click to zoom'
-    });
-
-    map.addListener('center_changed', function() {
-    // 3 seconds after the center of the map has changed, pan back to the
-    // marker.
-    window.setTimeout(function() {
-      map.panTo(marker.getPosition());
-    }, 3000);
-  });
-
-    marker.addListener('click', function() {
-      map.setZoom(8);
-      map.setCenter(marker.getPosition());
-    });
-  }
-
-</script>
-
-<% #end %> -->
 <% end %>
