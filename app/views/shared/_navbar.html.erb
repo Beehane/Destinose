@@ -7,6 +7,13 @@
     <% end %>
   </div>
 
+<% if controller_name == 'cards' || 'results' && action_name == 'show' %>
+  <div class="your-search">
+  <p class="your-search">Departing from {departure} for {length}</p>
+  </div>
+<% end %>
+
+
   <!-- Right Navigation -->
   <%= render 'shared/my_account_button' %>
 
