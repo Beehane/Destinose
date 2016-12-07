@@ -1,31 +1,31 @@
-  <h5 class="text-center">check out your results</h5>
-<div class="row-fluid">
-  <div class="col-md-12">
-    <div id="map" style='width: 100%; height: 600px;'></div>
+  <h5 class="text-center"> Check out your preferred destinay'tions</h5>
+  <div class="row-fluid">
+    <div class="col-md-12">
+      <div id="map" style='width: 100%; height: 600px;'></div>
+    </div>
+
   </div>
+<%= p @hash %>
+  <% @recommendations.each do |recommendation| %>
+  <%= recommendation.longitude %>
+  <%= recommendation.latitude %>
+  <% end %>
 
-</div>
-
-<% @recommendations.each do |recommendation| %>
-<%= recommendation.longitude %>
-<%= recommendation.latitude %>
-<% end %>
-
-<% content_for(:after_js) do %>
-<%= javascript_tag do %>
+  <% content_for(:after_js) do %>
+  <%= javascript_tag do %>
 
 
   $(document).on('ready', function() {
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
+  var handler = Gmaps.build('Google');
+  handler.buildMap({ internal: { id: 'map' } }, function(){
+  markers = handler.addMarkers(<%= raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  if (markers.length == 0) {
+  handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
 });
 });
 <% end %>

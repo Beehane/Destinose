@@ -10,6 +10,14 @@ class RecommendationsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@recommendations) do |recommendation, marker|
       marker.lat recommendation.latitude
       marker.lng recommendation.longitude
+      @card = Card.find_by(lat: recommendation.latitude, lng: recommendation.longitude)
+      # @image_url = cl_image_tag(@card.image)
+      # raise
+      # byebug
+            # marker.infowindow "<h1>" + @card.name + "</h1><img src='"+@card.image+" height='200'><p>" + @card.name + "</p>"
+
+      marker.infowindow "<h1>" + @card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(@card.image, height: 200, width: 300, crop: :fill) + "<p>" + @card.description + "</p>"
+      # @card.name + @card.description + @card.image
     end
   end
 
@@ -27,9 +35,6 @@ class RecommendationsController < ApplicationController
     @recommendations = []
     @cards.each do |card, index|
       @recommendation = Recommendation.create!(latitude: card.lat, longitude: card.lng)
-
-      # @recommendation"#{index}" = Recommendation.create!(latitude: card.lat, longitude: card.lng)
-      # @recommendation"#{index}".save!
       @recommendations << @recommendation
     end
   end
