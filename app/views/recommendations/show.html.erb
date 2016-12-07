@@ -13,32 +13,31 @@
 <% content_for(:after_js) do %>
 <%= javascript_tag do %>
 
-$(document).on('turbolinks:load', function() {
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function(){
-markers = handler.addMarkers(<%= raw @hash.to_json %>)
-draggable: true,
-animation: google.maps.Animation.DROP;
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
-}
+
+  $(document).on('ready', function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function(){
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
 });
 });
 <% end %>
 
-function toggleBounce() {
+<!-- function toggleBounce() {
 if (marker.getAnimation() !== null) {
 marker.setAnimation(null);
 } else {
 marker.setAnimation(google.maps.Animation.BOUNCE);
 }
-}
+} -->
 <!--
-<% if false %>
+<%# if false %>
 
 <script>
 
