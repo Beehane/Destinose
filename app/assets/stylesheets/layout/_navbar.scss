@@ -10,6 +10,9 @@
   justify-content: space-between;
 }
 
+.navbar-wagon img {
+  max-height: 50px;
+}
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
@@ -22,7 +25,7 @@
 /* Navbar logo */
 .navbar-wagon-brand img {
   height: 40px;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -55,15 +58,14 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #7FD0DF;
-  color: white;
+  background-color: #fff;
+  color: #2DA7D0;
   font-size: 14px;
-  border: 2px solid #7FD0DF;
+  border: 2px solid #7CC9E8;
 }
 .navbar-wagon-button:hover {
-  color: white;
-  background: #7FD0DF;
-  border-color: #ac2626;
+  background: #7CC9E8;
+  border-color: #7CC9E8;
 }
 
 /* Navbar search form */
