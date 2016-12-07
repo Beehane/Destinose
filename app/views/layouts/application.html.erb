@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Destinosé</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Destinosé</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="icon"
-      type="image/png"
-      href="<%= image_path 'worldemoji.png' %>">
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="icon"
+  type="image/png"
+  href="<%= image_path 'worldemoji.png' %>">
+</head>
 
-  <body>
+<body>
+
+  <!-- allowing for Google map JS dependencies -->
+  <%= javascript_include_tag "https://maps/google.com/maps/api/js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
+
   <!-- adding notices for Devise -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <!-- rendering view -->
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
 </html>

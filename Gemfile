@@ -12,7 +12,13 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 4.2.1'
+gem 'gmaps4rails'
+gem 'geocoder'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -44,6 +50,8 @@ gem 'figaro'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do
