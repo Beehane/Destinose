@@ -45,7 +45,7 @@ class CardsController < ApplicationController
   def next_card
     @seen = @liked + @disliked
     if @all_card_ids - @seen == []
-      redirect_to out_of_cards_path
+      redirect_to results_path
     else
       next_card_id = (@all_card_ids - @seen).sample
       redirect_to card_path(id: next_card_id)
