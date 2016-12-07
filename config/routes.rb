@@ -9,13 +9,7 @@ Rails.application.routes.draw do
 
   get 'swipe', to: 'cards#swipe'
 
-  get 'out_of_cards', to: 'cards#out_of_cards'
-
   get 'dashboard', to: 'pages#dashboard'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
 
   get 'results', to: 'recommendations#show'
 
