@@ -1,0 +1,8 @@
+<div class="massage-editor">
+<hr>
+<h4 class="text-center">My Massages</h4>
+        <%  current_user.massages.each do |massage|%>
+           <p><%=   massage.tagline%> | <%= link_to 'delete', massage_path(massage), method: :delete %> | <%= link_to 'edit', edit_massage_path(massage) %></p>
+       <% end%>
+<%= link_to 'new massage', new_massage_path %>
+  </div>

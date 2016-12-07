@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Card.destroy_all
+User.destroy_all
+
+User.create(
+  name: "Juan Neel",
+  email: "juan@gmail.com",
+  password: "password",
+  )
 
 Card.create(
   name: "Auckland, New Zealand",
