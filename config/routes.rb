@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   get 'recommendations/pages'
 
-  root to: 'cards#select'
+  # root to: 'cards#select'
 
-  get 'next_card', to: 'cards#next_card'
+  root to: 'cards#show'
+
+
+  get 'swipe', to: 'cards#swipe'
+
+  get 'out_of_cards', to: 'cards#out_of_cards'
 
   get 'sessions/create'
 
