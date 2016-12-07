@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: 'cards#show'
 
+  resources 'cards', only: [:show]
+
+  get 'start', to: 'cards#home'
+
   get 'swipe', to: 'cards#swipe'
 
   get 'out_of_cards', to: 'cards#out_of_cards'
@@ -8,8 +12,6 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'sessions/destroy'
-
-  get 'cards/show'
 
   get 'cards/select'
 

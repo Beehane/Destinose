@@ -1,7 +1,18 @@
 class CardsController < ApplicationController
 
-  def show(card_id = Card.all.sample.id)
-    @current_card = Card.find(card_id)
+  before_action :all_card_ids
+
+  def home
+    cookies.delete(:liked)
+    cookies.delete(:disliked)
+    redirect_to card_path(id: Card.all.sample.id)
+  end
+
+  def show
+    parse_cookies
+    params[:id] = Card.all.sample.id unless params[:id]
+    @current_strength = ((@liked.count.to_f / 50) * 100).round
+    @current_card = Card.find(params[:id])
   end
 
   def swipe
@@ -31,20 +42,20 @@ class CardsController < ApplicationController
     end
   end
 
-  def current_strength
-    @current_strength = (@liked.count.to_f / 50 * 100).round
-  end
-
   def next_card
-    @all_card_ids = []
-    Card.all.each { |x| @all_card_ids << x.id }
     @seen = @liked + @disliked
-    if (@all_card_ids - @seen) == []
+    if @all_card_ids - @seen == []
       redirect_to out_of_cards_path
     else
       next_card_id = (@all_card_ids - @seen).sample
-      redirect_to cards_show_path(next_card_id)
+      redirect_to card_path(id: next_card_id)
     end
+  end
+
+  def all_card_ids
+    @all_card_ids = []
+    Card.all.each { |x| @all_card_ids << x.id }
+    @all_card_ids
   end
 
   # private
