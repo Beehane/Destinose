@@ -1,3 +1,4 @@
+
 require 'distance_measures'
 
 require 'geocoder'
@@ -25,7 +26,7 @@ module DBSCAN
 
     def clusterize!
       current_cluster = -1
-      @cards.liked.each do |point|
+      @points.each do |point|
         if !point.visited?
           point.visit!
           neighbors = inmediate_neighbors( point )

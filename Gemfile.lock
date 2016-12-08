@@ -85,6 +85,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    distance_measures (0.0.6)
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -260,6 +261,7 @@ DEPENDENCIES
   cloudinary (= 1.1.0)
   coffee-rails (~> 4.2.1)
   devise
+  distance_measures
   figaro
   font-awesome-sass (~> 4.7)
   geocoder
