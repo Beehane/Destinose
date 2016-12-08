@@ -1,3 +1,7 @@
+require 'dbscan'
+require 'pp'
+
+
 class RecommendationsController < ApplicationController
 
   helper RecommendationsHelper
@@ -10,6 +14,10 @@ class RecommendationsController < ApplicationController
       marker.lng card.lng
       marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
     end
+    ##@hash contains liked cards
+    cluster_cards
+
+raise
   end
 
   def create_cards_array
@@ -20,6 +28,7 @@ class RecommendationsController < ApplicationController
       @cards << card_found
     end
   end
+
 
   def existing
     existing_recommendation
@@ -74,5 +83,13 @@ class RecommendationsController < ApplicationController
     redirect_to dashboard_path
     flash[:notice] = 'saved search deleted successfully'
   end
+  private
 
+  coordinates = []
+
+
+  def cluster_cards
+    dbscan= DBSCAN([], :epsilon => 0.1, :min_points => 1, :distance => :haversine_distance2)
+    pp dbscan.results
+  end
 end
