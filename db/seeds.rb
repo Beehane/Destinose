@@ -18,7 +18,7 @@ juan = User.create(
   password: "password",
   )
 
-Card.create(
+card1 = Card.create(
   name: "Auckland, New Zealand",
   lat: -36.84846,
   lng: 174.763332,
@@ -26,7 +26,7 @@ Card.create(
   image: "0001_wtzczu.jpg",
   )
 
-Card.create(
+card2 = Card.create(
   name: "Dar Es Salam, Tanzania",
   lat: -6.792354,
   lng: 39.208328,
@@ -135,13 +135,13 @@ reco = Recommendation.create(
 )
 
 Swipe.create(
-  card: Card.first,
+  card: card1,
   liked: true,
   recommendation: reco
 )
 
 Swipe.create(
-  card: Card.last,
+  card: card2,
   liked: false,
   recommendation: reco
 )

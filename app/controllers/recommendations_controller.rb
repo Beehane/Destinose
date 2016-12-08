@@ -65,4 +65,10 @@ class RecommendationsController < ApplicationController
     flash[:notice] = 'result saved successfully'
   end
 
+  def destroy
+    Recommendation.find(params[:id]).destroy
+    redirect_to dashboard_path
+    flash[:notice] = 'result deleted successfully'
+  end
+
 end

@@ -9,7 +9,7 @@
     <ul>
       <% unless current_user.recommendations.empty? %>
         <% current_user.recommendations.each do |reco| %>
-        <li>Search saved from <%= reco.created_at %> | <%= link_to "view", existing_path(reco) %></li>
+        <li>Search saved from <%= reco.created_at %> | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %></li>
         <% end %>
       <% end %>
     </ul>
