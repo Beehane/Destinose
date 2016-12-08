@@ -34,6 +34,8 @@ class RecommendationsController < ApplicationController
   def existing_recommendation
     @cards = []
     @recommendation = Recommendation.find(params[:id])
+    cookies.delete(:search)
+    cookies[:search] = [@recommendation.departure, @recommendation.length].to_json
     @recommendation.swipes.each do |swipe|
       if swipe.liked?
         card_found = Card.find(swipe.card_id)
@@ -45,12 +47,13 @@ class RecommendationsController < ApplicationController
   def parse_cookies
     @liked = JSON.parse(cookies[:liked])
     @disliked = JSON.parse(cookies[:disliked])
+    @search = JSON.parse(cookies[:search])
   end
 
   def save_to_recommendation
     authenticate_user!
     parse_cookies
-    reco = Recommendation.new(user: current_user)
+    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1])
     @liked.each do |x|
       card = Card.find(x)
       swipe = Swipe.new(card: card, liked: true, recommendation: reco)
@@ -63,13 +66,13 @@ class RecommendationsController < ApplicationController
     end
     reco.save
     redirect_to dashboard_path
-    flash[:notice] = 'result saved successfully'
+    flash[:notice] = 'search saved successfully'
   end
 
   def destroy
     Recommendation.find(params[:id]).destroy
     redirect_to dashboard_path
-    flash[:notice] = 'result deleted successfully'
+    flash[:notice] = 'saved search deleted successfully'
   end
 
 end

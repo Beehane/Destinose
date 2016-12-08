@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'users/facebook'
 
-  root to: 'cards#show'
+  root to: 'pages#search'
 
   resources 'cards', only: [:show]
 
