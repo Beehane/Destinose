@@ -1,3 +1,4 @@
-<h5 class="text-center">You searched for a trip from {departure} for {length}</h5>
+<% @search = JSON.parse(cookies[:search]) %>
+<h5 class="text-center">You searched for a trip from <%= @search[0] %> for <%= @search[1] %></h5>
 <p class="text-center"><a href="#">improve this result</a></p>
 <%= render 'recommendation' %>

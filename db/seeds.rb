@@ -132,6 +132,8 @@ Card.create(
 
 reco = Recommendation.create(
   user: juan
+  departure: "Christchurch, New Zealand",
+  length: "5 weeks"
 )
 
 Swipe.create(
