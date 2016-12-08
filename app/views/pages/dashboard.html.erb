@@ -10,7 +10,7 @@
     </div>
     <div class="col-xs-12 col-sm-3 rightwhite">
       <h3>My Details</h3>
-      <p><%= current_user.name %></p>
+      <p><%= current_user.first_name %> <%= current_user.last_name %></p>
       <p><%= current_user.email %></p>
       <p><%= link_to 'Edit my details', edit_user_registration_path %></p>
       <p><%= link_to 'Delete my account', cancel_user_registration_path %></p>

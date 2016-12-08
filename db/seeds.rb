@@ -10,7 +10,8 @@ Card.destroy_all
 User.destroy_all
 
 User.create(
-  name: "Juan Neel",
+  first_name: "Juan",
+  last_name: "Neel",
   email: "juan@gmail.com",
   password: "password",
   )

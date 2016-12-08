@@ -1,13 +1,17 @@
 <% if user_signed_in? %>
 
-<div class="navbar-wagon-item">
+<!-- <div class="navbar-wagon-item">
       <div class="dropdown">
-        <a href="" id="navbar-wagon-menu" class="navbar-wagon-item hidden-xs navbar-wagon-button btn dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+        <a href="" id="navbar-wagon-menu" class="navbar-wagon-item hidden-xs navbar-wagon-button btn dropdown-toggle" data-toggle="dropdown"><%#= current_user.name %></a>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to 'Dashboard', dashboard_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li><%#= link_to 'Dashboard', dashboard_path %></li>
+          <li><%#= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
+</div> -->
+
+<div class="btn text-right" id="navbar-wagon-menu">
+      <%= link_to current_user.first_name, dashboard_path %>
 </div>
 
 <div class="navbar-wagon-item">
