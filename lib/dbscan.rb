@@ -25,7 +25,7 @@ module DBSCAN
 
     def clusterize!
       current_cluster = -1
-      @points.each do |point|
+      @cards.liked.each do |point|
         if !point.visited?
           point.visit!
           neighbors = inmediate_neighbors( point )

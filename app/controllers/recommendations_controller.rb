@@ -1,5 +1,7 @@
 class RecommendationsController < ApplicationController
 
+  helper RecommendationsHelper
+
   def show
     create_cards_array
     # create_recommendations_array

@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  belongs_to :card
+  has_many :card_tags
 end

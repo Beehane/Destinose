@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208112947) do
+ActiveRecord::Schema.define(version: 20161208134932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,14 +50,12 @@ ActiveRecord::Schema.define(version: 20161208112947) do
 
   create_table "swipes", force: :cascade do |t|
     t.integer  "card_id"
-    t.integer  "user_id"
     t.boolean  "liked"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "recommendation_id"
     t.index ["card_id"], name: "index_swipes_on_card_id", using: :btree
     t.index ["recommendation_id"], name: "index_swipes_on_recommendation_id", using: :btree
-    t.index ["user_id"], name: "index_swipes_on_user_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|

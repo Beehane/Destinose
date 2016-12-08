@@ -3,6 +3,5 @@ class Swipe < ApplicationRecord
   belongs_to :recommendation
 
   validates :card, presence: :true
-  validates :user, presence: :true
   validates :liked, presence: true, numericality: { less_than_or_equal_to: 1 }
 end

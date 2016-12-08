@@ -35,7 +35,7 @@
         <type label="SET" length="1" sql="SET" quote=""/>
         <type label="Bit" length="0" sql="bit" quote=""/>
     </group>
-</datatypes><table x="243" y="340" name="Users">
+</datatypes><table x="303" y="391" name="Users">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -63,7 +63,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="132" y="41" name="Recommendations">
+<table x="158" y="49" name="Recommendations">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -129,7 +129,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="534" y="321" name="Swipes">
+<table x="512" y="190" name="Swipes">
 <row name="id" null="1" autoincrement="1">
 <datatype>TINYINT</datatype>
 <default>NULL</default></row>
@@ -140,9 +140,9 @@
 <row name="liked" null="1" autoincrement="0">
 <datatype>BINARY</datatype>
 <default>NULL</default></row>
-<row name="user_id" null="1" autoincrement="0">
+<row name="recommendation_id" null="1" autoincrement="0">
 <datatype>TINYINT</datatype>
-<default>NULL</default><relation table="Users" row="id" />
+<default>NULL</default><relation table="Recommendations" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>

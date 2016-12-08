@@ -11,7 +11,7 @@ User.destroy_all
 Recommendation.destroy_all
 Swipe.destroy_all
 
-User.create(
+juan = User.create(
   first_name: "Juan",
   last_name: "Neel",
   email: "juan@gmail.com",
@@ -130,3 +130,18 @@ Card.create(
   image: "0014_gvmbxp.jpg",
   )
 
+reco = Recommendation.create(
+  user: juan
+)
+
+Swipe.create(
+  card: Card.first,
+  liked: true,
+  recommendation: reco
+)
+
+Swipe.create(
+  card: Card.last,
+  liked: false,
+  recommendation: reco
+)
