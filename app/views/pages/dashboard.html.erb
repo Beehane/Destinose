@@ -7,8 +7,10 @@
       <h3>My Searches</h3>
 
     <ul>
-      <% current_user.recommendations.each do |reco| %>
-      <li>Search saved from <%= reco.created_at %></li>
+      <% unless current_user.recommendations.empty? %>
+        <% current_user.recommendations.each do |reco| %>
+        <li>Search saved from <%= reco.created_at %></li>
+        <% end %>
       <% end %>
     </ul>
 
