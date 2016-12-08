@@ -6,6 +6,15 @@
     <div class="col-xs-12 col-sm-9 appointments-list">
       <h3>My Searches</h3>
 
+    <ul>
+      <% unless current_user.recommendations.empty? %>
+        <% current_user.recommendations.each do |reco| %>
+        <li>Search saved from <%= reco.created_at %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+
 
     </div>
     <div class="col-xs-12 col-sm-3 rightwhite">

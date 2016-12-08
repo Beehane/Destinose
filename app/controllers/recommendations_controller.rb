@@ -1,5 +1,7 @@
 class RecommendationsController < ApplicationController
 
+  helper RecommendationsHelper
+
   def show
     # @marker = Card.find(params[:id])
 

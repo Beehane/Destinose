@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  has_many :recommendations, dependent: :destroy
+  has_many :swipes, through: :recommendations, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
