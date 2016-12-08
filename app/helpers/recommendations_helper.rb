@@ -10,12 +10,12 @@ module RecommendationsHelper
     reco = Recommendation.new(user: current_user)
     @liked.each do |x|
       card = Card.find(x)
-      swipe = Swipe.new(card: card, liked: 1, recommendation: reco)
+      swipe = Swipe.new(card: card, liked: true, recommendation: reco)
       swipe.save
     end
     @disliked.each do |x|
       card = Card.find(x)
-      swipe = Swipe.new(card: card, liked: 0, recommendation: reco)
+      swipe = Swipe.new(card: card, liked: false, recommendation: reco)
       swipe.save
     end
     reco.save
