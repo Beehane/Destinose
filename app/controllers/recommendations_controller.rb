@@ -38,4 +38,6 @@ class RecommendationsController < ApplicationController
       @recommendations << @recommendation
     end
   end
+
+
 end

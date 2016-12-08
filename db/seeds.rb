@@ -8,6 +8,8 @@
 
 Card.destroy_all
 User.destroy_all
+Recommendation.destroy_all
+Swipe.destroy_all
 
 User.create(
   first_name: "Juan",
