@@ -1,0 +1,7 @@
+<%= form_tag select_path, :method => 'get', class: 'form-inline' do %>
+    <p>
+      <%= text_field_tag :departure, params[:departure],:id => 'geo-input' %>
+      <%= select_tag "length", options_for_select(["1 week", "2 weeks"]) %>
+      <%= submit_tag "Search", class: 'btn btn-primary btn-bordered btn-bordered-primary', :name => nil %>
+    </p>
+<% end %>

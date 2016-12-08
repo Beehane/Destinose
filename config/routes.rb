@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'users/facebook'
 
-  get 'recommendations/pages'
-
   root to: 'cards#show'
 
   resources 'cards', only: [:show]
+
+  get 'select', to: 'cards#from_search'
 
   get 'save_result', to: 'recommendations#save_to_recommendation'
 
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get '/results/:id', to: 'recommendations#existing', as: 'existing'
 
   delete '/results/:id', to: 'recommendations#destroy', as: 'destroy'
+
+  get 'search', to: 'pages#search'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -2,9 +2,21 @@ class CardsController < ApplicationController
 
   before_action :all_card_ids
 
+  helper CardsHelper
+
   def start
     cookies.delete(:liked)
     cookies.delete(:disliked)
+    redirect_to card_path(id: Card.all.sample.id)
+  end
+
+  def from_search
+    cookies.delete(:search)
+    cookies.delete(:liked)
+    cookies.delete(:disliked)
+    departure = params[:departure]
+    length = params[:length]
+    cookies[:search] = [params[:departure], params[:length]].to_json
     redirect_to card_path(id: Card.all.sample.id)
   end
 
