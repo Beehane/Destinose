@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources 'cards', only: [:show]
 
+  get 'save_result', to: 'recommendations#save_to_recommendation'
+
   get 'start', to: 'cards#home' #clears the cookies
 
   get 'swipe', to: 'cards#swipe'
