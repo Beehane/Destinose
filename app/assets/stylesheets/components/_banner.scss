@@ -1,0 +1,88 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  position: center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.banner-massage {
+  height: 350px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: #0B1532;
+  position: relative;
+  background-color: #ccc;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #fff;
+  margin: -5px;
+  background-position: center;
+}
+
+.banner-massage img {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.banner-user {
+  position: center;
+  top: 50px;
+}
+.banner-category {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  font-size: 20px;
+  color: white;
+}
+.banner-description {
+  position: absolute;
+  bottom: 10px;
+  left: 8%;
+  color: white;
+}
+
+
+.banner-description h2 {
+  font-size: 24px;
+}
+.banner-description p {
+  font-size: 13px;
+  }
+.banner-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.banner-link:hover{
+  opacity: 0.1;
+}
+
+
+

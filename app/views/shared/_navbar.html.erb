@@ -1,4 +1,7 @@
-  <div class="navbar-wagon">
+<% @search = JSON.parse(cookies[:search]) %>
+
+<div class="navbar-wagon">
+
   <!-- Logo -->
 
   <div class="navbar-wagon-brand">
@@ -9,7 +12,8 @@
 
 <% if controller_name == 'cards' || 'results' && action_name == 'show' %>
   <div class="your-search">
-  <p class="your-search">Departing from {departure} for {length}</p>
+  <p class="your-search text-center">Departing from <%= @search[0] %> for <%= @search[1] %></p>
+  <p><%= link_to 'start over', search_path, class: "text-center small"%></p>
   </div>
 <% end %>
 
