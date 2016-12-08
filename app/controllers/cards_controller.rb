@@ -2,7 +2,7 @@ class CardsController < ApplicationController
 
   before_action :all_card_ids
 
-  def home
+  def start
     cookies.delete(:liked)
     cookies.delete(:disliked)
     redirect_to card_path(id: Card.all.sample.id)
