@@ -39,9 +39,5 @@ class RecommendationsController < ApplicationController
     end
   end
 
-  def parse_cookies
-    @liked = JSON.parse(cookies[:liked])
-    @disliked = JSON.parse(cookies[:disliked])
-  end
 
 end
