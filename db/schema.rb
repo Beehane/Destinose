@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208134932) do
+ActiveRecord::Schema.define(version: 20161208164930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,15 +36,12 @@ ActiveRecord::Schema.define(version: 20161208134932) do
 
   create_table "recommendations", force: :cascade do |t|
     t.string   "length"
-    t.float    "dep_lat"
-    t.float    "dep_lng"
     t.float    "dest_lat"
     t.float    "dest_lng"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float    "latitude"
-    t.float    "longitude"
+    t.string   "departure"
     t.index ["user_id"], name: "index_recommendations_on_user_id", using: :btree
   end
 
@@ -94,7 +91,5 @@ ActiveRecord::Schema.define(version: 20161208134932) do
   add_foreign_key "card_tags", "tags"
   add_foreign_key "recommendations", "users"
   add_foreign_key "swipes", "cards"
-  add_foreign_key "swipes", "recommendations"
-  add_foreign_key "swipes", "users"
   add_foreign_key "tags", "cards"
 end
