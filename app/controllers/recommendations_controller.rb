@@ -48,6 +48,7 @@ class RecommendationsController < ApplicationController
   end
 
   def save_to_recommendation
+    authenticate_user!
     parse_cookies
     reco = Recommendation.new(user: current_user)
     @liked.each do |x|
