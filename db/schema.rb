@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208164930) do
+ActiveRecord::Schema.define(version: 20161209154523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20161208164930) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
-    t.float    "lat"
-    t.float    "lng"
+    t.float    "latitude"
+    t.float    "longitude"
     t.text     "description"
     t.string   "image"
     t.datetime "created_at",  null: false
@@ -91,9 +91,5 @@ ActiveRecord::Schema.define(version: 20161208164930) do
   add_foreign_key "card_tags", "tags"
   add_foreign_key "recommendations", "users"
   add_foreign_key "swipes", "cards"
-<<<<<<< HEAD
-  add_foreign_key "swipes", "recommendations"
-=======
->>>>>>> 3cb1c6543ad728bdd410e6c0b7b5ae0d3f865eff
   add_foreign_key "tags", "cards"
 end
