@@ -16,7 +16,7 @@ class CardsController < ApplicationController
     cookies.delete(:disliked)
     departure = params[:departure]
     length = params[:length]
-    cookies[:search] = [params[:departure], params[:length]].to_json
+    cookies[:search] = [departure, length].to_json
     redirect_to card_path(id: Card.all.sample.id)
   end
 
@@ -28,7 +28,6 @@ class CardsController < ApplicationController
   end
 
   def swipe
-    # @swipe = Swipe.new(card_id: params[:card_id], liked: params[:liked])
     parse_cookies
     if params[:liked].to_i == 1
       @liked << params[:card_id].to_i
@@ -57,7 +56,7 @@ class CardsController < ApplicationController
   def next_card
     @seen = @liked + @disliked
     if @all_card_ids - @seen == []
-      redirect_to results_path
+      redirect_to out_of_cards_path
     else
       next_card_id = (@all_card_ids - @seen).sample
       redirect_to card_path(id: next_card_id)
