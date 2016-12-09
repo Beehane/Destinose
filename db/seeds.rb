@@ -131,7 +131,7 @@ Card.create(
   )
 
 reco = Recommendation.create(
-  user: juan
+  user: juan,
   departure: "Christchurch, New Zealand",
   length: "5 weeks"
 )
