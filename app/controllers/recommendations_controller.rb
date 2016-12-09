@@ -16,8 +16,6 @@ class RecommendationsController < ApplicationController
     end
     ##@hash contains liked cards
     cluster_cards
-
-raise
   end
 
   def create_cards_array

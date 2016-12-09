@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-  <h5 class="text-center"> Check out your preferred destinay'tions</h5>
-  <div class="row-fluid">
-    <div class="col-md-12">
-      <div id="map" style='width: 100%; height: 600px;'></div>
-    </div>
-  </div>
-  <% content_for(:after_js) do %>
-    <%= javascript_tag do %>
-      $(document).on('ready', function() {
-        var handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' } }, function(){
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          if (markers.length == 0) {
-            handler.getMap().setZoom(2);
-          } else if (markers.length == 1) {
-            handler.getMap().setZoom(14);
-          }
-        });
-      });
-    <% end %>
-  <% end %>
-=======
 <h5 class="text-center">here's where you should go</h5>
 <p class="text-center"><%= link_to "save this result", save_result_path %></p>
 <%= render 'recommendation' %>
->>>>>>> 3cb1c6543ad728bdd410e6c0b7b5ae0d3f865eff
