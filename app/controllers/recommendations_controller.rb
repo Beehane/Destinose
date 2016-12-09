@@ -38,6 +38,11 @@ class RecommendationsController < ApplicationController
     end
   end
 
+  def improve
+    existing_recommendation
+    redirect_to card_path(id: @liked.sample)
+  end
+
   def existing_recommendation
     @cards = []
     @recommendation = Recommendation.find(params[:id])
