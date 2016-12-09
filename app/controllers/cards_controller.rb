@@ -28,7 +28,6 @@ class CardsController < ApplicationController
   end
 
   def swipe
-    # @swipe = Swipe.new(card_id: params[:card_id], liked: params[:liked])
     parse_cookies
     if params[:liked].to_i == 1
       @liked << params[:card_id].to_i
