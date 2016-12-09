@@ -1,12 +1,11 @@
 $(document).ready(function() {
-  var city = document.getElementById(input);
-  var searchBox = new google.maps.places.SearchBox(input);
+  var city = document.getElementById('input');
+  var searchBox = new google.maps.places.SearchBox(city);
 
     google.maps.event.addDomListener(window, 'load', function() {
-  $('.controls').val(placeholder);
   $("city").focus();
-    $('./results').submit(function(){
-    });
+    // $('./results').submit(function(){
+    // });
 
   });
 });
