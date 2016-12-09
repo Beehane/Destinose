@@ -1,4 +1,4 @@
-<% @search = JSON.parse(cookies[:search]) %>
+<% @search = JSON.parse(cookies[:search]) unless cookies[:search].nil? %>
 
 <div class="navbar-wagon">
 
