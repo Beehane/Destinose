@@ -42,13 +42,24 @@ class RecommendationsController < ApplicationController
     @cards = []
     @recommendation = Recommendation.find(params[:id])
     cookies.delete(:search)
+    cookies.delete(:liked)
+    cookies.delete(:disliked)
+    @liked = []
+    @disliked = []
     cookies[:search] = [@recommendation.departure, @recommendation.length].to_json
     @recommendation.swipes.each do |swipe|
       if swipe.liked?
         card_found = Card.find(swipe.card_id)
+        @liked << card_found.id
+        @cards << card_found
+      else
+        card_found = Card.find(swipe.card_id)
+        @disliked << card_found.id
         @cards << card_found
       end
     end
+    cookies[:liked] = @liked.to_json
+    cookies[:disliked] = @disliked.to_json
   end
 
   def parse_cookies
@@ -81,6 +92,7 @@ class RecommendationsController < ApplicationController
     redirect_to dashboard_path
     flash[:notice] = 'saved search deleted successfully'
   end
+
   private
 
   coordinates = []
