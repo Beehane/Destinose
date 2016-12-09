@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   get 'save_result', to: 'recommendations#save_to_recommendation'
 
-  get 'start', to: 'cards#start' #clears the cookies
-
   get 'swipe', to: 'cards#swipe'
 
   get 'dashboard', to: 'pages#dashboard'
