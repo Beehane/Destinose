@@ -9,7 +9,8 @@
     <ul>
       <% unless current_user.recommendations.empty? %>
         <% current_user.recommendations.each do |reco| %>
-        <li>Departing <%= reco.departure %> for <%= reco.length %> searched on <%= reco.created_at %> | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %></li>
+        <li>Departing <%= reco.departure %> for <%= reco.length %> searched on <%= reco.created_at %> | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
+        <%= link_to 'improve', improve_path(reco) %></li>
         <% end %>
       <% end %>
     </ul>

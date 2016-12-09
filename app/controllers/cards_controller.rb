@@ -16,7 +16,7 @@ class CardsController < ApplicationController
     cookies.delete(:disliked)
     departure = params[:departure]
     length = params[:length]
-    cookies[:search] = [params[:departure], params[:length]].to_json
+    cookies[:search] = [departure, length].to_json
     redirect_to card_path(id: Card.all.sample.id)
   end
 
