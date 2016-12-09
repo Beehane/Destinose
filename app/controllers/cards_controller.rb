@@ -4,20 +4,21 @@ class CardsController < ApplicationController
 
   helper CardsHelper
 
-  def start
-    cookies.delete(:liked)
-    cookies.delete(:disliked)
-    redirect_to card_path(id: Card.all.sample.id)
-  end
-
   def from_search
     cookies.delete(:search)
     cookies.delete(:liked)
     cookies.delete(:disliked)
-    departure = params[:departure]
-    length = params[:length]
-    cookies[:search] = [departure, length].to_json
+    @departure = params[:departure]
+    @length = params[:length]
+    cookies[:search] = [@departure, @length].to_json
     redirect_to card_path(id: Card.all.sample.id)
+  end
+
+  def filter_length
+    case @length
+    when > 14
+      @filter_distance = 75_000
+    end
   end
 
   def show
@@ -54,6 +55,7 @@ class CardsController < ApplicationController
   end
 
   def next_card
+    @nearby = card.near(@departure, 250)
     @seen = @liked + @disliked
     if @all_card_ids - @seen == []
       redirect_to out_of_cards_path
@@ -65,7 +67,10 @@ class CardsController < ApplicationController
 
   def all_card_ids
     @all_card_ids = []
-    Card.all.each { |x| @all_card_ids << x.id }
+    Card.all.each do |card|
+      next if card.near(@departure, 250)
+      @all_card_ids << card.id if card.near(@departure, @filter_distance)
+    end
     @all_card_ids
   end
 
