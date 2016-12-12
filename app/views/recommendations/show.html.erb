@@ -1,3 +1,6 @@
 <h5 class="text-center">here's where you should go</h5>
 <p class="text-center"><%= link_to "save this result", save_result_path %> | <%= link_to 'keep swiping', card_path(id: @liked.sample)%></p>
 <%= render 'recommendation' %>
+
+<h3><%= @centroid %></h3>
+<p><%= @cluster %></p>

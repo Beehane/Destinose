@@ -14,8 +14,24 @@ class RecommendationsController < ApplicationController
       marker.lng card.longitude
       marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
     end
-    ##@hash contains liked cards
-    cluster_cards
+    coordinates = []
+    @hash.each do |hash|
+     coordinates << hash[:lat]
+     coordinates << hash[:lng]
+    end
+
+    @coordinates = coordinates.each_slice(2).to_a
+
+    @cluster = cluster_cards
+    find_centroid
+  end
+
+  def find_centroid
+    all_lat = @cluster[0].map{ |val| val[0] }
+    all_long = @cluster[0].map{ |val| val[1] }
+    average_lat = (all_lat.sum / all_lat.count).round(6)
+    average_long = (all_long.sum / all_long.count).round(6)
+    @centroid = [average_lat, average_long]
   end
 
   def create_cards_array
@@ -76,7 +92,7 @@ class RecommendationsController < ApplicationController
   def save_to_recommendation
     authenticate_user!
     parse_cookies
-    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1])
+    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1], dest_lat: @centroid[0], dest_lng: @centroid[1])
     @liked.each do |x|
       card = Card.find(x)
       swipe = Swipe.new(card: card, liked: true, recommendation: reco)
@@ -100,11 +116,20 @@ class RecommendationsController < ApplicationController
 
   private
 
-  coordinates = []
-
 
   def cluster_cards
-    dbscan= DBSCAN([], :epsilon => 0.1, :min_points => 1, :distance => :haversine_distance2)
-    pp dbscan.results
+    test_coordinates = [
+    [-25.279878, -57.524864],
+    [-25.275594, -57.513830],
+    [-25.279858, -57.529757],
+    [-25.280052, -57.530679],
+    [-36.84846, 174.763332],
+    [-43.84356, 172.739434],
+    [-41.28646, 174.776236],
+    [-13.163141, -72.544963],
+    [10.391049, -75.479426]
+  ]
+    dbscan = DBSCAN(@coordinates, :epsilon => 2200, :min_points => 2, :distance => :haversine_distance2)
+    dbscan.results
   end
 end
