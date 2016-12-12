@@ -49,7 +49,8 @@ class RecommendationsController < ApplicationController
       address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
-      @user_country = request.location.country_code
+      @user_country = request.location.country
+      @user_country_iso = request.location.country_code
     end
 
     if @cluster.key?(1)
@@ -174,6 +175,7 @@ class RecommendationsController < ApplicationController
     skyscanner = JSON.parse(file)
     @quote = skyscanner["Quotes"][0]["MinPrice"]
     @skyscanner_url = "https://www.skyscanner.net/transport/flights/BCN/#{@country_iso}/anytime/anytime/"
+    raise
   end
 
   private
