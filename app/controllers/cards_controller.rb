@@ -69,13 +69,43 @@ class CardsController < ApplicationController
   end
 
   def next_card
-    all_card_ids
+    if @liked.count >= 13
+      cluster_biasing #begins
+    else
+      all_card_ids
+      @seen = @liked + @disliked
+      if @all_card_ids - @seen == []
+        redirect_to out_of_cards_path
+      else
+        next_card_id = (@all_card_ids - @seen).sample
+        redirect_to card_path(id: next_card_id)
+      end
+    end
+  end
+
+  def cluster_biasing
+    @liked_coordinates = []
+    @liked.each do |like|
+      card = Card.find(like)
+      @liked_coordinates << [card[:latitude], card[:longitude]]
+    end
+    @likes_cluster = cluster_current_likes
+    @likes_centroid = Geocoder::Calculations.geographic_center(@likes_cluster[0])
+
+    near_card_ids
     @seen = @liked + @disliked
-    if @all_card_ids - @seen == []
+    if @near_card_ids - @seen == []
       redirect_to out_of_cards_path
     else
-      next_card_id = (@all_card_ids - @seen).sample
+      next_card_id = (@near_card_ids - @seen).sample
       redirect_to card_path(id: next_card_id)
+    end
+  end
+
+  def near_card_ids
+    @near_card_ids = []
+    Card.near(@temp_centroid, 1000).each do |x|
+    @near_card_ids << x.id
     end
   end
 
@@ -84,6 +114,12 @@ class CardsController < ApplicationController
     Card.all.each do |x|
     @all_card_ids << x.id
     end
+  end
+
+private
+  def cluster_current_likes
+    dbscan = DBSCAN(@liked_coordinates, :epsilon => 2200, :min_points => 2, :distance => :haversine_distance2)
+    dbscan.results
   end
 
   # def filter_by_distance
