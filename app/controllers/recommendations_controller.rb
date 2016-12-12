@@ -32,19 +32,35 @@ class RecommendationsController < ApplicationController
     if @cluster[0].nil?
       redirect_to need_more_info_path
     else
-      @centroid = find_centroid
+      @centroid = find_centroid(@cluster[0])
       address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
     end
+
+    if @cluster.key?(1)
+      @centroid_b = find_centroid(@cluster[1])
+      @country_b = find_country(@cluster[1])
+    end
+
+    if @cluster.key?(2)
+      @centroid_c = find_centroid(@cluster[2])
+      @country_c = find_country(@cluster[2])
+    end
+
   end
 
-  def find_centroid
+  def find_centroid(cluster)
     # all_lat = @cluster[0].map{ |val| val[0] }
     # all_long = @cluster[0].map{ |val| val[1] }
     # average_lat = (all_lat.sum / all_lat.count).round(6)
     # average_long = (all_long.sum / all_long.count).round(6)
     # return [average_lat, average_long]
-    return Geocoder::Calculations.geographic_center(@cluster[0])
+    return Geocoder::Calculations.geographic_center(cluster)
+  end
+
+  def find_country(cluster)
+    address = Geocoder.search(cluster[1]).first.data["address_components"]
+    return address.find { |component| component["types"].include? 'country' }["long_name"]
   end
 
   def create_cards_array
