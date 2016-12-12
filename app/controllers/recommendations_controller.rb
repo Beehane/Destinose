@@ -175,7 +175,6 @@ class RecommendationsController < ApplicationController
     skyscanner = JSON.parse(file)
     @quote = skyscanner["Quotes"][0]["MinPrice"]
     @skyscanner_url = "https://www.skyscanner.net/transport/flights/BCN/#{@country_iso}/anytime/anytime/"
-    raise
   end
 
   private
