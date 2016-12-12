@@ -1,4 +1,6 @@
 require 'dbscan'
+require 'open-uri'
+require 'nokogiri'
 
 class RecommendationsController < ApplicationController
 
@@ -14,6 +16,7 @@ class RecommendationsController < ApplicationController
         marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
       end
     barycenter
+    get_quote
   end
 
   def regular_result
@@ -45,6 +48,7 @@ class RecommendationsController < ApplicationController
       @centroid = find_centroid(@cluster[0])
       address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
+      @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
     end
 
     if @cluster.key?(1)
@@ -160,6 +164,14 @@ class RecommendationsController < ApplicationController
     Recommendation.find(params[:id]).destroy
     redirect_to dashboard_path
     flash[:notice] = 'saved search deleted successfully'
+  end
+
+  def get_quote
+    url = "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/GB/EUR/en-ES/BCN/#{@country_iso}/anytime/anytime?apiKey=#{ENV['SKYSCANNER']}"
+    file = open(url).read
+    skyscanner = JSON.parse(file)
+    @quote = skyscanner["Quotes"][0]["MinPrice"]
+    @skyscanner_url = "https://www.skyscanner.net/transport/flights/bcn/#{@country_iso}/anytime/anytime/"
   end
 
   private

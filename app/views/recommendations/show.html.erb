@@ -3,6 +3,7 @@
 <p>
 
 <p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %></p>
+<p class="text-center"><a href="<%= @skyscanner_url %>">round-trip flights from &euro; <%= @quote.round %></a></p>
 <%= render 'recommendation' %>
 
 <p class="text-center">Out of <%= @liked.count %> images you liked, <%= @cluster[0].count %> of them were in <%= @country %>. <% if @cluster.key?(1) %>You also really liked <%= @country_b %><% end %><% if @cluster.key?(2) %> and <%= @country_c %>, too<% end %></p>
