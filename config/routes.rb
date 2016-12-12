@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
 
+  get 'regular_result', to: 'recommendations#regular_result'
+
   get 'need_more_info', to: 'pages#need_more_info'
 
   get 'results', to: 'recommendations#show', as: 'results'

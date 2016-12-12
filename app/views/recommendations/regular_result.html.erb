@@ -1,0 +1,32 @@
+<div class="container text-center">
+  <h2>sorry we can't make a recommendation yet</h2>
+  <h3>please <%= link_to 'keep swiping', next_card_path %></h3>
+</div>
+
+<p class="text-center">our you can <%= link_to "save this result", save_result_path %> anyway.</p>
+
+<div class="row-fluid">
+  <div class="col-md-12">
+    <div id="map" style='width: 100%; height: 500px;'></div>
+  </div>
+</div>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
+
+
+
