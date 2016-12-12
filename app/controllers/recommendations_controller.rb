@@ -49,6 +49,7 @@ class RecommendationsController < ApplicationController
       address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
+      @user_country = request.location.country_code
     end
 
     if @cluster.key?(1)
@@ -167,11 +168,12 @@ class RecommendationsController < ApplicationController
   end
 
   def get_quote
+    # change BCN to #{@user_country} before production!!!!
     url = "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/GB/EUR/en-ES/BCN/#{@country_iso}/anytime/anytime?apiKey=#{ENV['SKYSCANNER']}"
     file = open(url).read
     skyscanner = JSON.parse(file)
     @quote = skyscanner["Quotes"][0]["MinPrice"]
-    @skyscanner_url = "https://www.skyscanner.net/transport/flights/bcn/#{@country_iso}/anytime/anytime/"
+    @skyscanner_url = "https://www.skyscanner.net/transport/flights/BCN/#{@country_iso}/anytime/anytime/"
   end
 
   private
