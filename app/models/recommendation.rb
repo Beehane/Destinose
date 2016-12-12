@@ -3,7 +3,6 @@ class Recommendation < ApplicationRecord
   has_many :swipes, dependent: :destroy
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
-      obj.address = geo.address
       obj.country = geo.country
     end
   end
