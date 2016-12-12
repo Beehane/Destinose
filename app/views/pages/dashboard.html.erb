@@ -9,7 +9,12 @@
 
       <% unless current_user.recommendations.empty? %>
         <% current_user.recommendations.each do |reco| %>
-        <h4><%= reco.country %> | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
+        <% if reco.country.blank? %>
+          <h4>Incomplete Search
+        <% else %>
+        <h4><%= reco.country %>
+        <% end %>
+        | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
         <%= link_to 'improve', improve_path(reco) %></h4>
         <p>based on <%= reco.swipes.count %> likes, last updated at <%= reco.created_at %></p>
         <% end %>

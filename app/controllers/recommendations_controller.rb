@@ -16,6 +16,17 @@ class RecommendationsController < ApplicationController
     barycenter
   end
 
+  def regular_result
+      create_cards_array
+
+      @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
+        marker.lat card.latitude
+        marker.lng card.longitude
+        marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
+      end
+
+  end
+
   def barycenter
 
     coordinates = []
@@ -27,8 +38,9 @@ class RecommendationsController < ApplicationController
     @coordinates = coordinates.each_slice(2).to_a
 
     @cluster = cluster_cards
+
     if @cluster[0].nil?
-      redirect_to need_more_info_path
+      redirect_to regular_result_path
     else
       @centroid = find_centroid(@cluster[0])
       address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
@@ -121,8 +133,14 @@ class RecommendationsController < ApplicationController
   def save_to_recommendation
     authenticate_user!
     parse_cookies
-    @centroid = params[:centroid].map(&:to_f)
-    reco = Recommendation.new(user: current_user, latitude: @centroid[0].round(6), longitude: @centroid[1].round(6), country: params[:country])
+
+    if params[:centroid].nil?
+      reco = Recommendation.new(user: current_user)
+    else
+      @centroid = params[:centroid].map(&:to_f)
+      reco = Recommendation.new(user: current_user, latitude: @centroid[0].round(6), longitude: @centroid[1].round(6), country: params[:country])
+    end
+
     @liked.each do |x|
       card = Card.find(x)
       swipe = Swipe.new(card: card, liked: true, recommendation: reco)
