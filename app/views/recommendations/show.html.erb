@@ -1,5 +1,5 @@
 <h4 class="text-center">looks like you'd love <strong><%= @country %></strong></h4>
-<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', card_path(id: @liked.sample)%></p>
+<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %></p>
 <%= render 'recommendation' %>
 
 <p>This was based on <%= @liked.count %> images you liked.</p>

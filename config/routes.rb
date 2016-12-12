@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   resources 'cards', only: [:show]
 
-  get 'select', to: 'cards#from_search'
-
   get 'save_result', to: 'recommendations#save_to_recommendation'
 
   get 'swipe', to: 'cards#swipe'
+
+  get 'next_card', to: 'cards#next_card'
 
   get 'restart', to: 'cards#restart'
 

@@ -33,7 +33,7 @@ class RecommendationsController < ApplicationController
       redirect_to need_more_info_path
     else
       @centroid = find_centroid
-      address = Geocoder.search(@cluster[0].sample).first.data["address_components"]
+      address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
     end
   end
@@ -74,7 +74,7 @@ class RecommendationsController < ApplicationController
   def improve
     existing_recommendation
     authenticate_user!
-    redirect_to card_path(id: @liked.sample)
+    redirect_to next_card_path
   end
 
   def existing_recommendation

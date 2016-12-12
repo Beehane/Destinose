@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-9 appointments-list">
-      <h3>My Current Recommendations</h3>
+      <h3>My Current Recommendations | <%= link_to 'new', restart_path %></h3>
       <br />
 
       <% unless current_user.recommendations.empty? %>
