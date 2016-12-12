@@ -11,10 +11,13 @@
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
+        handler.getMap().setCenter({lat: <%= @centroid[0] %>, lng: <%= @centroid[1] %>});
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
         } else if (markers.length == 1) {
           handler.getMap().setZoom(14);
+        } else {
+          handler.getMap().setZoom(5);
         }
       });
     });

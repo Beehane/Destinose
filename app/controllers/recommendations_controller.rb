@@ -92,7 +92,7 @@ class RecommendationsController < ApplicationController
   def save_to_recommendation
     authenticate_user!
     parse_cookies
-    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1])
+    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1], dest_lat: @centroid[0], dest_lng: @centroid[1])
     @liked.each do |x|
       card = Card.find(x)
       swipe = Swipe.new(card: card, liked: true, recommendation: reco)
