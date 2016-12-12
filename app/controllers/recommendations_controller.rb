@@ -23,7 +23,10 @@ class RecommendationsController < ApplicationController
     @coordinates = coordinates.each_slice(2).to_a
 
     @cluster = cluster_cards
-    find_centroid
+    @centroid = find_centroid
+
+    address = Geocoder.search(@centroid).first.data["address_components"]
+    @country = address.find { |component| component["types"].include? 'country' }["long_name"]
   end
 
   def find_centroid
@@ -31,7 +34,8 @@ class RecommendationsController < ApplicationController
     all_long = @cluster[0].map{ |val| val[1] }
     average_lat = (all_lat.sum / all_lat.count).round(6)
     average_long = (all_long.sum / all_long.count).round(6)
-    @centroid = [average_lat, average_long]
+    return [average_lat, average_long]
+    # return Geocoder::Calculations.geographic_center(@cluster[0])
   end
 
   def create_cards_array
@@ -92,7 +96,8 @@ class RecommendationsController < ApplicationController
   def save_to_recommendation
     authenticate_user!
     parse_cookies
-    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1], dest_lat: @centroid[0], dest_lng: @centroid[1])
+    @centroid = params[:centroid].map(&:to_f)
+    reco = Recommendation.new(user: current_user, departure: @search[0], length: @search[1], latitude: @centroid[0], longitude: @centroid[1])
     @liked.each do |x|
       card = Card.find(x)
       swipe = Swipe.new(card: card, liked: true, recommendation: reco)
