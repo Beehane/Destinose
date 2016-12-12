@@ -6,6 +6,6 @@ class Recommendation < ApplicationRecord
       obj.country = geo.country
     end
   end
-  after_validation :reverse_geocode, :fetch_address
+  after_validation :reverse_geocode
   validates :user, presence: :true
 end
