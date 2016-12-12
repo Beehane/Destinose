@@ -70,7 +70,7 @@ class CardsController < ApplicationController
 
   def next_card
     if @liked.count >= 13
-      cluster_biasing
+      cluster_biasing #begins
     else
       all_card_ids
       @seen = @liked + @disliked
@@ -89,8 +89,8 @@ class CardsController < ApplicationController
       card = Card.find(like)
       @liked_coordinates << [card[:latitude], card[:longitude]]
     end
-    @temp_cluster = cluster_current_likes
-    @temp_centroid = Geocoder::Calculations.geographic_center(@temp_cluster[0])
+    @likes_cluster = cluster_current_likes
+    @likes_centroid = Geocoder::Calculations.geographic_center(@likes_cluster[0])
 
     near_card_ids
     @seen = @liked + @disliked
