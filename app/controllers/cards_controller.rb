@@ -1,3 +1,5 @@
+require 'dbscan'
+
 class CardsController < ApplicationController
 
   before_action :parse_cookies, :all_card_ids

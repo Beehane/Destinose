@@ -1,6 +1,4 @@
 require 'dbscan'
-require 'pp'
-
 
 class RecommendationsController < ApplicationController
 
