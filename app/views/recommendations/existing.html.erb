@@ -1,5 +1,5 @@
-<% @search = JSON.parse(cookies[:search]) %>
 <% @liked = JSON.parse(cookies[:liked]) %>
-<h5 class="text-center">You searched for a trip from <%= @search[0] %> for <%= @search[1] %></h5>
+<% @disliked = JSON.parse(cookies[:disliked]) %>
+<h5 class="text-center">Based on <%= @liked.count + @disliked.count %> images, you'd like <%= @country %></h5>
 <h5 class='text-center'><%= link_to 'improve this result', card_path(id: @liked.sample)%></h5>
 <%= render 'recommendation' %>

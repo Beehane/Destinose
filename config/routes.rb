@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'users/facebook'
 
-  root to: 'pages#search'
+  root to: 'cards#show'
 
   resources 'cards', only: [:show]
 
@@ -11,7 +11,11 @@ Rails.application.routes.draw do
 
   get 'swipe', to: 'cards#swipe'
 
+  get 'restart', to: 'cards#restart'
+
   get 'dashboard', to: 'pages#dashboard'
+
+  get 'need_more_info', to: 'pages#need_more_info'
 
   get 'results', to: 'recommendations#show', as: 'results'
 

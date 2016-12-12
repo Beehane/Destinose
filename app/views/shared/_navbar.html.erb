@@ -1,5 +1,3 @@
-<% @search = JSON.parse(cookies[:search]) unless cookies[:search].nil? %>
-
 <div class="navbar-wagon">
 
   <!-- Logo -->
@@ -12,7 +10,7 @@
 
 <% if controller_name == 'cards' || 'results' && action_name == 'show' %>
   <div class="your-search">
-  <p class="your-search text-center">does this look like your kind of thing?</p>
+  <p class="your-search text-center"><%= link_to 'start over', restart_path %></p>
   </div>
 <% end %>
 

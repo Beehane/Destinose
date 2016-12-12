@@ -4,13 +4,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-9 appointments-list">
-      <h3>My Searches</h3>
+      <h3>My Current Recommendations</h3>
+      <br />
 
-    <ul>
       <% unless current_user.recommendations.empty? %>
         <% current_user.recommendations.each do |reco| %>
-        <li>Departing <%= reco.departure %> for <%= reco.length %> searched on <%= reco.created_at %> | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
-        <%= link_to 'improve', improve_path(reco) %></li>
+        <h4><%= reco.country %> | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
+        <%= link_to 'improve', improve_path(reco) %></h4>
+        <p>based on <%= reco.swipes.count %> likes, last updated at <%= reco.created_at %></p>
         <% end %>
       <% end %>
     </ul>
