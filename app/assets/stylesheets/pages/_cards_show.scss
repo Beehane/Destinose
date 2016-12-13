@@ -48,6 +48,22 @@
   height: 60px;
 }
 
+.suggestion-bar-grey {
+  // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
+  background-color: #eee;
+  opacity: 0.7;
+  width: 100%;
+  position: fixed;
+  bottom: 30px;
+  left: 0px;
+  height: 60px;
+  color: #333;
+}
+
+.greyed-out {
+  color: #999;
+}
+
 .suggestion-bar a:hover {
   text-decoration: none;
 }
@@ -57,9 +73,13 @@
   position: relative;
   left: auto;
   z-index: 1000;
-  color: #fff;
   margin: auto;
   padding: 15px;
   font-size: 21px;
   font-weight: bolder;
+}
+
+.instructions {
+  margin-top: -30px;
+  color: #fff;
 }
