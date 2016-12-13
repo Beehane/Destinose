@@ -1,19 +1,19 @@
 <div class="container text-center">
 
-<h4 class="text-center">your suggestionation is:</h4>
-<h3 class="text-center"><%= @country %></h3>
-<p>
+<h4>your suggestionation is:</h4>
+<h3><%= @country %></h3>
 
 <p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %></p>
-<p class="text-center">round-trip flights from <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a></p>
+
 <%= render 'recommendation' %>
 
   <div class="bottom-wrapper">
     <div class="bottom-container">
-      <div class="bottom-msg-left">Out of <%= @liked.count %> images you liked, <%= @cluster[0].count %> of them were in <%= @country %>. <% if @cluster.key?(1) %>You also really liked <%= @country_b %><% end %><% if @cluster.key?(2) %> and <%= @country_c %>, too<% end %>
+      <div class="bottom-msg-left"><p class="text-center">round-trip flights from <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a></p>
       </div>
     </div>
   </div>
 
 </div>
 
+<!-- Out of <%#= @liked.count %> images you liked, <%#= @cluster[0].count %> of them were in <%= @country %>. <%# if @cluster.key?(1) %>You also really liked <%= @country_b %><%# end %><%# if @cluster.key?(2) %> and <%= @country_c %>, too<%# end %> -->
