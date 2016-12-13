@@ -19,8 +19,11 @@
   <%#= link_to "find my destination", results_path if @current_strength >= 4 %>
 
   <div class="row">
-  <div class="col-xs-6 text-center progress-bar">
-      <p>Current Strength: <%= @current_strength %>&percnt;</p>
+    <div class="col-xs-6 text-center progress-container">
+      <div class="progress-text">
+          Suggestion Strength: <%= @current_strength %>&percnt;
+      </div>
+      <div class="progress-bar" style="width:<%= @current_strength %>%"></div>
     </div>
   </div>
 </div>

@@ -5,11 +5,33 @@
   margin-top: 5%;
 }
 
-.progress-bar {
-  position: absolute;
+.progress-container {
+  position: fixed;
   bottom: 0px;
-  height: 60px;
+  left: 0px;
+  height: 50px;
   background-color: #333;
   width: 100%;
-  padding: 5%;
+  z-index: 5;
+}
+
+.progress-bar{
+  background-color:$green;
+  height:100%;
+  position: fixed;
+  height: 50px;
+  line-height: inherit;
+  left: 0px;
+  bottom: 0px;
+  z-index: 6;
+}
+
+.progress-text {
+  width: 100%;
+  position: relative;
+  left: auto;
+  z-index: 1000;
+  color: #fff;
+  margin: auto;
+  padding: 15px;
 }
