@@ -5,15 +5,16 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-6 btn-swipe btn-no">
+    <div class="col-xs-6 btn-swipe btn-no text-center">
       <%= link_to "No", swipe_path(liked: 0, card_id: @current_card.id) %>
     </div>
 
-    <div class="col-xs-6 btn-swipe btn-yes">
+    <div class="col-xs-6 btn-swipe btn-yes text-center">
       <%= link_to "Yes", swipe_path(liked: 1, card_id: @current_card.id) %>
     </div>
   </div>
 
+  <%= link_to 'start over', restart_path %>
 
 
   <%#= link_to "find my destination", results_path if @current_strength >= 4 %>
@@ -21,7 +22,7 @@
     <div class="col-xs-6 text-center suggestion-bar">
       <%= link_to results_path do %>
       <div class="suggestion-text">
-          Suggestination
+          Find My Next Destination
       </div>
       <% end %>
     </div>
@@ -30,7 +31,7 @@
   <div class="row">
     <div class="col-xs-6 text-center progress-container">
       <div class="progress-text">
-          Strength: <%= @current_strength %>&percnt;
+          Recommendation Strength: <%= @current_strength %>&percnt;
       </div>
       <div class="progress-bar" style="width:<%= @current_strength %>%"></div>
     </div>

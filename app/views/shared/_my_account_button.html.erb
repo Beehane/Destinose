@@ -1,59 +1,16 @@
 <% if user_signed_in? %>
 
-<!-- <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <a href="" id="navbar-wagon-menu" class="navbar-wagon-item hidden-xs navbar-wagon-button btn dropdown-toggle" data-toggle="dropdown"><%#= current_user.name %></a>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%#= link_to 'Dashboard', dashboard_path %></li>
-          <li><%#= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </div>
-</div> -->
-
-<div class="btn text-right" id="navbar-wagon-menu">
+<div class="navbar-new-button btn text-right" id="navbar-wagon-menu">
       <%= link_to current_user.first_name, dashboard_path %>
 </div>
 
-<div class="navbar-wagon-item">
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-</div>
-
-<!--- MOBILE MENU -->
-<div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to 'Dashboard', dashboard_path %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      </ul>
-    </div>
-</div>
 
 <%else%>
 
 
 <div class="navbar-wagon-item">
-    <%=link_to "Sign In", new_user_session_path, id: 'navbar-wagon-menu', class: 'navbar-wagon-item navbar-wagon-button btn dropdown-toggle hidden-xs' %>
-</div>
-
-<!--- MOBILE MENU -->
-<div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%=link_to "Sign In", new_user_session_path %></li>
-      </ul>
-    </div>
+    <%=link_to "Sign In", new_user_session_path, id: 'navbar-wagon-menu', class: 'navbar-wagon-item navbar-new-button btn dropdown-toggle hidden-xs' %>
 </div>
 
 <% end %>
 
-
-<!-- <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <a href="" id="navbar-wagon-menu" class="navbar-wago-item navbar-wagon-button btn dropdown-toggle" data-toggle="dropdown">My Account</a>
-        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle"  data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        </ul>
-      </div>
-</div> -->
