@@ -5,3 +5,13 @@
 body {
   background-image: linear-gradient(to bottom right, #00A6E3 0%, #BAFFF4 100%);
 }
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $yellow;
+  text-decoration: none;
+}
