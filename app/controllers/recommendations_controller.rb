@@ -16,7 +16,6 @@ class RecommendationsController < ApplicationController
         marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
       end
     barycenter
-    get_quote
   end
 
   def regular_result
@@ -51,6 +50,7 @@ class RecommendationsController < ApplicationController
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
       @user_country = request.location.country
       @user_country_iso = request.location.country_code
+      get_quote
     end
 
     if @cluster.key?(1)
