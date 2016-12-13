@@ -170,11 +170,11 @@ class RecommendationsController < ApplicationController
 
   def get_quote
     # change BCN to #{@user_country} before production!!!!
-    url = "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/GB/EUR/en-ES/#{@user_country_iso}/#{@country_iso}/anytime/anytime?apiKey=#{ENV['SKYSCANNER']}"
+    url = "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/GB/EUR/en-ES/BCN/#{@country_iso}/anytime/anytime?apiKey=#{ENV['SKYSCANNER']}"
     file = open(url).read
     skyscanner = JSON.parse(file)
     @quote = skyscanner["Quotes"][0]["MinPrice"]
-    @skyscanner_url = "https://www.skyscanner.net/transport/flights/#{@user_country_iso}/#{@country_iso}/anytime/anytime/"
+    @skyscanner_url = "https://www.skyscanner.net/transport/flights/BCN/#{@country_iso}/anytime/anytime/"
   end
 
   private
