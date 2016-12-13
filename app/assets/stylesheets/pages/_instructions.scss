@@ -1,0 +1,28 @@
+.steps {
+  margin-top: 35px;
+  img {
+    width: 135px;
+  }
+  h1 {
+    font-size: 25px;
+    position: relative;
+    margin-left: 110px;
+  }
+
+  h2 {
+    font-size: 15px;
+    position: relative;
+    margin-left: 10px;
+  }
+}
+
+.step1, .step2, .step3 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.step-content {
+  max-width: 150px;
+  // margin: 50px;
+}
