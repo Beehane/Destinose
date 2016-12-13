@@ -451,6 +451,14 @@ Card.create(
   image: "0053_kgorqt.jpg",
 )
 
+Card.create(
+  name: "Robot Restaurant, Shinjuku",
+  latitude: 35.694293,
+  longitude: 139.702865,
+  description: "be dazzled by robots, animals and dancers at this glitzy restaurant",
+  image: "0054_jiy2ts.jpg",
+)
+
 
 
 

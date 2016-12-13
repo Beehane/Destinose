@@ -1,20 +1,63 @@
-table td {
-  padding: 5px 50px;
+.card img {
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  margin-top: 5%;
 }
 
-table {
-  font-size: 20px;
+.progress-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 30px;
+  background-color: #333;
+  width: 100%;
+  z-index: 5;
 }
 
-.strength {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+.progress-bar{
+  background-color:$green;
+  height: 100%;
+  position: fixed;
+  height: 30px;
+  line-height: inherit;
+  left: 0px;
+  bottom: 0px;
+  z-index: 6;
 }
 
-.your-search {
+.progress-text {
+  width: 100%;
+  left: auto;
+  z-index: 1000;
+  color: #fff;
+  top: auto;
   margin: auto;
-  top: 20px;
-  color: #999;
+  padding: 7px;
+  font-size: 10px;
+}
 
+.suggestion-bar {
+  background-image: linear-gradient(to bottom left, #E374B3 0%, #FFD505 100%);
+  width: 100%;
+  position: fixed;
+  bottom: 30px;
+  left: 0px;
+  height: 60px;
+}
+
+.suggestion-bar a:hover {
+  text-decoration: none;
+}
+
+.suggestion-text {
+  width: 100%;
+  position: relative;
+  left: auto;
+  z-index: 1000;
+  color: #fff;
+  margin: auto;
+  padding: 15px;
+  font-size: 21px;
+  font-weight: bolder;
 }
