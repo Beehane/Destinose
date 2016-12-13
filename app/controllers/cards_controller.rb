@@ -71,7 +71,7 @@ class CardsController < ApplicationController
   end
 
   def next_card
-    if @liked.count >= 13
+    if @liked.count >= 20
       cluster_biasing #begins
     else
       all_card_ids
