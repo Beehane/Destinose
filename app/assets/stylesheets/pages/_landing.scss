@@ -1,0 +1,46 @@
+
+/*.homepage-center-wrapper {
+  color: white;
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 30% 20%;
+  display: flex;
+}*/
+
+.homepage-center-wrapper {
+  color: white;
+  text-align: center;
+  height: 90vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    font-size: 35px;
+    color: white;
+  }
+}
+
+.btn-lg {
+  padding: 15px 10px;
+  font-size: 20px;
+  border-radius: 30px;
+  position: center;
+  background-color: #FBCC1C;
+  border-color: #FBCC1C;
+  margin-top: 100px;
+}
+
+.next {
+  font-weight: bold;
+  color: #2E5561;
+}
+
+.destination {
+  font-weight: bold;
+  color: #DCAE1D
+}
+
