@@ -192,7 +192,7 @@ class RecommendationsController < ApplicationController
   #   [-13.163141, -72.544963],
   #   [10.391049, -75.479426]
   # ]
-    dbscan = DBSCAN(@coordinates, :epsilon => 2200, :min_points => 2, :distance => :haversine_distance2)
+    dbscan = DBSCAN(@coordinates, :epsilon => 1800, :min_points => 2, :distance => :haversine_distance2)
     dbscan.results
   end
 end
