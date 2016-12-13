@@ -192,7 +192,7 @@ Card.create(
   latitude: 35.011636,
   longitude: 135.768029,
   description: "Get absolutely bamboozled in this serene forest",
-  image: "0018_y23kzd.jpg",
+  image: "0018_h9xc6h.jpg",
 )
 
 Card.create(
