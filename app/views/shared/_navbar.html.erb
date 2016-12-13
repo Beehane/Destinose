@@ -1,22 +1,16 @@
-<div class="navbar-wagon">
+<div class="navbar-new">
 
   <!-- Logo -->
 
-  <div class="navbar-wagon-brand">
+  <div class="navbar-logo">
     <%=link_to root_path do %>
-    <%= image_tag 'logo_black.png'%>
+    <%= image_tag 'logo_white.png'%>
     <% end %>
   </div>
-
-<% if controller_name == 'cards' || 'results' && action_name == 'show' %>
-  <div class="your-search">
-  <p class="your-search text-center"><%= link_to 'start over', restart_path %></p>
-  </div>
-<% end %>
-
-
   <!-- Right Navigation -->
-  <%= render 'shared/my_account_button' %>
+  <div class="navbar-right-container">
+    <%= render 'shared/my_account_button' %>
+  </div>
 
   <!-- Dropdown appearing on mobile only -->
 

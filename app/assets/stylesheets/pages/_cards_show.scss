@@ -2,7 +2,7 @@
   height: auto;
   width: auto;
   max-width: 90%;
-  margin-top: 5%;
+  margin-top: 10px;
 }
 
 .progress-container {
@@ -16,7 +16,7 @@
 }
 
 .progress-bar{
-  background-color:$green;
+  background-color:#666;
   height: 100%;
   position: fixed;
   height: 30px;
@@ -38,7 +38,8 @@
 }
 
 .suggestion-bar {
-  background-image: linear-gradient(to bottom left, #E374B3 0%, #FFD505 100%);
+  // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
+  background-color: $green;
   width: 100%;
   position: fixed;
   bottom: 30px;
