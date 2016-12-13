@@ -1,20 +1,15 @@
-table td {
-  padding: 5px 50px;
+.card img {
+  height: auto;
+  width: auto;
+  max-width: 90%;
+  margin-top: 5%;
 }
 
-table {
-  font-size: 20px;
-}
-
-.strength {
+.progress-bar {
   position: absolute;
-  bottom: 50px;
-  right: 50px;
-}
-
-.your-search {
-  margin: auto;
-  top: 20px;
-  color: #999;
-
+  bottom: 0px;
+  height: 60px;
+  background-color: #333;
+  width: 100%;
+  padding: 5%;
 }
