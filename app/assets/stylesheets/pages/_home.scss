@@ -2,10 +2,19 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+html {
+    height: 100%;
+}
+
 body {
   background-color: #00A6E3;
   background-image: linear-gradient(to bottom right, #00A6E3 0%, #BAFFF4 100%);
   background-position: center;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
@@ -17,3 +26,5 @@ a:hover {
   color: $yellow;
   text-decoration: none;
 }
+
+

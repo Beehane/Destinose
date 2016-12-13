@@ -12,7 +12,7 @@
   height: 30px;
   background-color: #333;
   width: 100%;
-  z-index: 5;
+  z-index: 1;
 }
 
 .progress-bar{
@@ -23,17 +23,18 @@
   line-height: inherit;
   left: 0px;
   bottom: 0px;
-  z-index: 6;
+  z-index: 2;
 }
 
 .progress-text {
+  position: fixed;
+  bottom: 7px;
   width: 100%;
-  left: auto;
-  z-index: 1000;
+  text-align: center;
+  z-index: 20;
   color: #fff;
   top: auto;
   margin: auto;
-  padding: 7px;
   font-size: 10px;
 }
 

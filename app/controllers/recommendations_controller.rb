@@ -13,7 +13,7 @@ class RecommendationsController < ApplicationController
       @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
         marker.lat card.latitude
         marker.lng card.longitude
-        marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
+        marker.infowindow "<h5>" + card.name + "</h5>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 100, width: 150, crop: :fill) + "<p>" + card.description + "</p>"
       end
     barycenter
   end
@@ -24,7 +24,7 @@ class RecommendationsController < ApplicationController
       @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
         marker.lat card.latitude
         marker.lng card.longitude
-        marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
+        marker.infowindow "<h5>" + card.name + "</h5>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 100, width: 150, crop: :fill) + "<p>" + card.description + "</p>"
       end
 
   end
