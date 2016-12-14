@@ -40,32 +40,16 @@
   bottom: 0px;
   left: 0px;
   padding: 20px;
-}
-
-.suggestion-bar-grey {
-  // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
-  background-color: #eee;
-  opacity: 0.5;
-}
-
-.greyed-out {
-  color: #999;
-  opacity: 0.5;
-}
-
-.suggestion-bar a:hover {
-  text-decoration: none;
-}
-
-.suggestion-text {
-  width: 100%;
-  position: relative;
-  left: auto;
-  z-index: 1000;
-  margin: auto;
   font-size: 21px;
   font-weight: bolder;
   color: #666;
+}
+
+.greyed-out {
+  // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
+  background-color: #eee;
+  opacity: 0.5;
+  color: #999;
 }
 
 .instructions {

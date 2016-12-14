@@ -40,20 +40,16 @@
   <%#= link_to "find my destination", results_path if @current_strength >= 4 %>
   <% if @liked.count >= 15 %>
     <div class="row">
-      <div class="col-xs-12 text-center suggestion-bar">
-        <%= link_to results_path do %>
-        <div class="suggestion-text">
-            Find My Next Destination
+      <%= link_to results_path do %>
+        <div class="col-xs-12 text-center suggestion-bar">
+              Find My Next Destination
         </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   <% else %>
     <div class="row">
-        <div class="col-xs-12 text-center suggestion-bar suggestion-bar-grey">
-          <div class="suggestion-text greyed-out">
+        <div class="col-xs-12 text-center suggestion-bar greyed-out">
               Find My Next Destination
-          </div>
         </div>
     </div>
   <% end %>

@@ -7,11 +7,9 @@
 
 <%= render 'recommendation' %>
 
-  <div class="bottom-wrapper">
-    <div class="bottom-container">
-      <div class="bottom-msg-left"><p class="text-center">round-trip flights are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a></p>
-      </div>
-    </div>
+  <div class="bottom-wrapper text-center">
+    round-trip flights are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a>
+    <br /><a href="http://skyscanner.net" target="_blank"><%= image_tag 'skyscanner.png'%></a>
   </div>
 
 </div>
