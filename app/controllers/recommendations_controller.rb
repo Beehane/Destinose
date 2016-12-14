@@ -147,16 +147,18 @@ class RecommendationsController < ApplicationController
       reco = Recommendation.new(user: current_user, latitude: @centroid[0].round(6), longitude: @centroid[1].round(6), country: params[:country])
     end
 
-    @liked.each do |x|
-      card = Card.find(x)
-      swipe = Swipe.new(card: card, liked: true, recommendation: reco)
-      swipe.save
-    end
     @disliked.each do |x|
       card = Card.find(x)
       swipe = Swipe.new(card: card, liked: false, recommendation: reco)
       swipe.save
     end
+
+    @liked.each do |x|
+      card = Card.find(x)
+      swipe = Swipe.new(card: card, liked: true, recommendation: reco)
+      swipe.save
+    end
+
     reco.save
     redirect_to dashboard_path
     flash[:notice] = 'search saved successfully'

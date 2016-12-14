@@ -1,37 +1,69 @@
 <!-- <style type="text/css"> *{ border: 1px solid red !important;} </style> -->
 
-<div class="wrapper">
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-9 appointments-list">
-      <h3>My Current Recommendations | <%= link_to 'new', restart_path %></h3>
-      <br />
+<div class="dash-wrapper">
+  <div class="container">
 
-      <% unless current_user.recommendations.empty? %>
-        <% current_user.recommendations.each do |reco| %>
-        <% if reco.country.blank? %>
-          <h4>Incomplete Search
-        <% else %>
-        <h4><%= reco.country %>
+    <div class="row">
+
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center">
+        <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <p><%= current_user.email %></p>
+        <p><%= link_to 'Edit my details', edit_user_registration_path %></p>
+        <p><%= link_to 'Delete my account', cancel_user_registration_path %></p>
+      </div>
+
+
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center">
+        <h4>My Saved Destinations</h4>
+        <% unless current_user.recommendations.empty? %>
+          <% current_user.recommendations.each do |reco| %>
+          <% if reco.country.blank? %>
+            <h4><%= link_to "Incomplete Search", existing_path(reco) %></h4>
+          <% else %>
+            <h4><%= link_to reco.country, existing_path(reco) %></h4>
+          <% end %>
+
+          <% @act = (Card.near([reco.latitude, reco.longitude], 1000)).size %>
+          <% unless @act < 1 %>
+            <p><%= @act %> things you can do here </p>
+          <% end %>
+
+          <p>based on <%= reco.swipes.count %> likes, saved on <%= reco.created_at.strftime("%b #{reco.created_at.day.ordinalize}") %></p>
+          <p><%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
+          <%= link_to 'improve', improve_path(reco) %></p>
+          <% end %>
         <% end %>
-        | <%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
-        <%= link_to 'improve', improve_path(reco) %></h4>
-        <p>based on <%= reco.swipes.count %> likes, last updated at <%= reco.created_at %></p>
+      </div>
+
+      <div class="col-sm-9 hidden-xs text-left dashbig">
+        <h3>My Saved Destinations</h3>
+        <% unless current_user.recommendations.empty? %>
+          <% current_user.recommendations.each do |reco| %>
+          <% if reco.country.blank? %>
+            <h4><%= link_to "Incomplete Search", existing_path(reco) %></h4>
+          <% else %>
+            <h4><%= link_to reco.country, existing_path(reco) %></h4>
+          <% end %>
+
+          <% @act = (Card.near([reco.latitude, reco.longitude], 1000)).size %>
+          <% unless @act < 1 %>
+            <p><%= @act %> things you can do here </p>
+          <% end %>
+
+          <p>based on <%= reco.swipes.count %> likes, saved on <%= reco.created_at.strftime("%b #{reco.created_at.day.ordinalize}, %Y") %></p>
+          <p><%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
+          <%= link_to 'improve', improve_path(reco) %></p>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </div>
 
+      <div class="col-sm-3 hidden-xs text-right dashbig">
+        <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+        <p><%= current_user.email %></p>
+        <p><%= link_to 'Edit my details', edit_user_registration_path %></p>
+        <p><%= link_to 'Delete my account', cancel_user_registration_path %></p>
+      </div>
 
-
-    </div>
-    <div class="col-xs-12 col-sm-3 rightwhite">
-      <h3>My Details</h3>
-      <p><%= current_user.first_name %> <%= current_user.last_name %></p>
-      <p><%= current_user.email %></p>
-      <p><%= link_to 'Edit my details', edit_user_registration_path %></p>
-      <p><%= link_to 'Delete my account', cancel_user_registration_path %></p>
-    </div>
-  </div>
-
+    </div><!-- end of row -->
   </div><!--end of container-->
 </div> <!--end of the wrapper-->
