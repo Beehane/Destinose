@@ -45,17 +45,12 @@
 .suggestion-bar-grey {
   // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
   background-color: #eee;
-  opacity: 0.7;
-  width: 100%;
-  position: fixed;
-  bottom: 30px;
-  left: 0px;
-  height: 60px;
-  color: #333;
+  opacity: 0.5;
 }
 
 .greyed-out {
   color: #999;
+  opacity: 0.5;
 }
 
 .suggestion-bar a:hover {
