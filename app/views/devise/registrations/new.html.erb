@@ -1,22 +1,29 @@
 <div class="container text-center">
-<h2>Sign up</h2>
+<h3>New Account</h3>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, required: true, autofocus: true  %>
-    <%= f.input :last_name, required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :first_name, required: true, autofocus: true, placeholder: 'e.g. Ernest'  %>
+    <%= f.input :last_name, required: true, placeholder: 'e.g. Hemingway' %>
+    <%= f.input :email, required: true, placeholder: 'e.g. eh@destinose.co' %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: '******' %>
+    <%= f.input :password_confirmation, required: true, placeholder: '******' %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
-<% end %>
 
-<br /><br />
+  <%= link_to user_facebook_omniauth_authorize_path do %>
+    <div class="facebook-btn">
+      Sign in with Facebook
+    </div>
+  <% end %>
+
+
+<% end %>
+<br />
 <%= render "devise/shared/links" %>
 </div>
