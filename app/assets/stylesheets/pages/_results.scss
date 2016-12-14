@@ -1,10 +1,23 @@
 .bottom-wrapper {
-  position: fixed;
   background-color: #fff;
-  height: 50px;
+  width: 100%;
+  position: fixed;
   bottom: 0px;
   left: 0px;
-  width: 100%;
+  padding: 20px;
+  font-size: 21px;
+  font-weight: bolder;
+  color: #666;
+}
+
+.bottom-wrapper img {
+  width: 150px;
+  opacity: 0.5;
+  margin: 5px 0 -5px 0;
+}
+
+.bottom-wrapper a {
+  color: #3F9BD3;
 }
 
 .bottom-container {
@@ -26,10 +39,11 @@
 #map {
   position: fixed;
   top: 15px;
-  height: 450px;
+  height: 60vh;
   width: 100%;
 }
 
 .suggestionation {
-  margin-top: -40px;
+  color: #333;
+  margin-top: 15px;
 }
