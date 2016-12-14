@@ -1,67 +1,56 @@
-.card img {
-  height: auto;
-  width: auto;
-  max-width: 90%;
-  margin-top: 10px;
-}
+
+// THE PROGRESS BAR
 
 .progress-container {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  height: 30px;
-  background-color: #333;
+  height: 5px;
+  background-color: #ADEDFF;
   width: 100%;
   z-index: 1;
 }
 
 .progress-bar{
-  background-color:#666;
+  background-color:#fff;
   height: 100%;
-  position: fixed;
-  height: 30px;
+  height: 5px;
   line-height: inherit;
-  left: 0px;
-  bottom: 0px;
   z-index: 2;
+  opacity: 0.7;
 }
 
 .progress-text {
-  position: fixed;
-  bottom: 7px;
-  width: 100%;
-  text-align: center;
-  z-index: 20;
-  color: #fff;
-  top: auto;
-  margin: auto;
+  color: #003366;
+  opacity: 0.7;
   font-size: 10px;
 }
 
+.progress-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+// FIND MY NEXT DESTINATION BUTTON
+
 .suggestion-bar {
   // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
-  background-color: $green;
+  background-color: #fff;
   width: 100%;
   position: fixed;
-  bottom: 30px;
+  bottom: 0px;
   left: 0px;
-  height: 60px;
+  padding: 20px;
 }
 
 .suggestion-bar-grey {
   // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
   background-color: #eee;
-  opacity: 0.7;
-  width: 100%;
-  position: fixed;
-  bottom: 30px;
-  left: 0px;
-  height: 60px;
-  color: #333;
+  opacity: 0.5;
 }
 
 .greyed-out {
   color: #999;
+  opacity: 0.5;
 }
 
 .suggestion-bar a:hover {
@@ -74,12 +63,16 @@
   left: auto;
   z-index: 1000;
   margin: auto;
-  padding: 15px;
   font-size: 21px;
   font-weight: bolder;
+  color: #666;
 }
 
 .instructions {
-  margin-top: -30px;
   color: #fff;
+  margin: 20px 0;
+}
+
+.card-wrap {
+  margin-bottom: 90px;
 }

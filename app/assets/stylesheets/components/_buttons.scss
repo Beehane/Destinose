@@ -3,6 +3,7 @@
   color: #fff;
   font-size: 1.5em;
   font-weight: bold;
+  // max-width: 250px;
 }
 
 .btn-swipe a {
@@ -10,9 +11,17 @@
   }
 
 .btn-yes {
-
+  background-color: #D29024;
 }
 
 .btn-no {
+  background-color: #666;
+}
 
+.button-container {
+  width: 100%;
+  // max-width: 500px;
+  position: absolute;
+  bottom: 100px;
+  margin: 0 auto 90px auto;
 }
