@@ -92,6 +92,5 @@ ActiveRecord::Schema.define(version: 20161212153834) do
   add_foreign_key "card_tags", "tags"
   add_foreign_key "recommendations", "users"
   add_foreign_key "swipes", "cards"
-  add_foreign_key "swipes", "recommendations"
   add_foreign_key "tags", "cards"
 end
