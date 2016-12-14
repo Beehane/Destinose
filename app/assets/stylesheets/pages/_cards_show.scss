@@ -1,3 +1,25 @@
+//CARDS
+
+.card-wrap {
+  width: 85%;
+  margin: auto;
+  z-index: 100;
+}
+
+.shadow-1 {
+  height: 7px;
+  background-color: #fff;
+  width: 100%;
+  margin: auto;
+}
+
+.shadow-2 {
+  height: 7px;
+  background-color: #fff;
+  width: 90%;
+  margin: auto;
+  opacity: 0.6;
+}
 
 // THE PROGRESS BAR
 
@@ -54,9 +76,7 @@
 
 .instructions {
   color: #fff;
-  margin: 20px 0;
+  margin-top: 15px;
 }
 
-.card-wrap {
-  margin-bottom: 90px;
-}
+
