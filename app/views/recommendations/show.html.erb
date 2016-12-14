@@ -1,6 +1,6 @@
 <div class="blue-body"><div class="container text-center suggestionation">
 
-<h4>your suggestion-ation is:</h4>
+<h4>looks like you'd love</h4>
 <h3><%= @country %></h3>
 
 <p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %> | <%= link_to 'start over', restart_path %></p>
