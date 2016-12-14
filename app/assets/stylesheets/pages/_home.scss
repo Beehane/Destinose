@@ -8,10 +8,14 @@ html {
 }
 
 body {
+  background-color: #fff;
+}
+
+.blue-body {
   background-color: #00A6E3;
   background-image: linear-gradient(to bottom right, #00A6E3 0%, #BAFFF4 100%);
   background-position: center;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;

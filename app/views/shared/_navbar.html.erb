@@ -2,16 +2,44 @@
 
   <!-- Logo -->
 
-  <div class="navbar-logo hidden-sm hidden-xs">
+  <div class="navbar-icon">
     <%=link_to root_path do %>
-    <%= image_tag 'logo_white.png'%>
+    <%= image_tag 'destinose-icon.png'%>
     <% end %>
   </div>
 
+  <!--- Render black logo if on white page -->
+  <% if controller_name == "pages" && action_name == 'dashboard' %>
+
+    <div class="navbar-logo hidden-sm hidden-xs">
+      <%=link_to root_path do %>
+      <%= image_tag 'logo_black.png'%>
+      <% end %>
+    </div>
+
+  <!--- Otherwise render white logo -->
+  <% else %>
+
+    <div class="navbar-logo hidden-sm hidden-xs">
+      <%=link_to root_path do %>
+      <%= image_tag 'logo_white.png'%>
+      <% end %>
+    </div>
+
+  <% end %>
+
   <!-- Right Navigation -->
-  <div class="navbar-right-container hidden-sm hidden-xs">
-    <%= render 'shared/my_account_button' %>
-  </div>
+  <% unless controller_name == "pages" && action_name == 'dashboard' %>
+    <div class="navbar-right-container hidden-sm hidden-xs">
+      <%= render 'shared/my_account_button' %>
+    </div>
+
+    <div class="navbar-new-avatar navbar-right-container hidden-md hidden-lg">
+      <%=link_to dashboard_path do %>
+      <%= image_tag 'avatar.png'%>
+      <% end %>
+    </div>
+  <% end %>
 
   <!-- Dropdown appearing on mobile only -->
 

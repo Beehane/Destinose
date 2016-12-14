@@ -2,7 +2,7 @@
   height: 40px;
   position: fixed;
   top: 15px;
-  left: 20px;
+  left: 60px;
 }_
 
 .navbar-new {
@@ -30,4 +30,19 @@
   color: #fff;
   font-size: 14px;
   border: 2px solid #fff;
+}
+
+.navbar-icon img {
+  height: 40px;
+  position: fixed;
+  top: 15px;
+  left: 20px;
+}
+
+.navbar-new-avatar img {
+  height: 30px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+
 }

@@ -1,4 +1,4 @@
-
+<div class="blue-body">
 <div class="container text-center">
 
     <div class="row">
@@ -44,7 +44,7 @@
 
 
   <%#= link_to "find my destination", results_path if @current_strength >= 4 %>
-  <% if @liked.count >= 15 %>
+  <% if @liked.count >= 2 %>
     <div class="row">
       <%= link_to results_path do %>
         <div class="col-xs-12 text-center suggestion-bar">
@@ -63,4 +63,4 @@
 
 
 </div>
-
+</div><!-- blue body -->
