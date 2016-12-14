@@ -3,20 +3,25 @@
 
     <div class="card row">
       <p class="instructions"><strong>tell us if you like what you see</strong><br />and we'll build a recommendation</p>
-      <%= cl_image_tag(@current_card.image, height: 500, width: 500, crop: :fill, id: @current_card.id)%>
-    </div>
 
-    <div class="row text-center">
-      <%= link_to swipe_path(liked: 0, card_id: @current_card.id) do %>
-        <div class="col-xs-6 btn-swipe btn-no">
-          No
-        </div>
-      <% end %>
-      <%= link_to swipe_path(liked: 1, card_id: @current_card.id) do %>
-        <div class="col-xs-6 btn-swipe btn-yes">
-          Yes
-        </div>
-      <% end %>
+
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <div class="row"><div  style="background-image: url(<%= cl_image_path(@current_card.image, crop: :fill, id: @current_card.id) %>); height: 60vh; background-size: cover;"></div></div>
+
+          <div class="row">
+            <%= link_to swipe_path(liked: 0, card_id: @current_card.id) do %>
+              <div class="col-xs-6 btn-swipe btn-no">
+                No
+              </div>
+            <% end %>
+            <%= link_to swipe_path(liked: 1, card_id: @current_card.id) do %>
+              <div class="col-xs-6 btn-swipe btn-yes">
+                Yes
+              </div>
+            <% end %>
+          </div>
+      </div>
+
     </div>
 
   <%#= link_to "find my destination", results_path if @current_strength >= 4 %>
