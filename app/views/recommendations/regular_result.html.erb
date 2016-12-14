@@ -1,9 +1,9 @@
-<div class="container text-center">
-  <h4>sorry we can't make a recommendation yet, <br />
-  please <%= link_to 'keep swiping', next_card_path %></h4>
-</div>
+<div class="blue-body">
 
-<p class="text-center">our you can <%= link_to "save this result", save_result_path %> anyway.</p>
+<div class="container text-center">
+  <div class="top-message writing-black">
+    <p>our algorithm can't pin you yet, please <%= link_to 'keep swiping', next_card_path %> or you can <%= link_to "save this result", save_result_path %> anyway.</p>
+    </div>
 
 <div class="row-fluid">
   <div class="col-md-12">
@@ -27,6 +27,8 @@
     });
   <% end %>
 <% end %>
+
+</div>
 
 
 
