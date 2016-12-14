@@ -2,6 +2,12 @@
 
   <!-- Logo -->
 
+  <div class="navbar-icon">
+    <%=link_to root_path do %>
+    <%= image_tag 'destinose-icon.png'%>
+    <% end %>
+  </div>
+
   <div class="navbar-logo hidden-sm hidden-xs">
     <%=link_to root_path do %>
     <%= image_tag 'logo_white.png'%>
@@ -11,6 +17,12 @@
   <!-- Right Navigation -->
   <div class="navbar-right-container hidden-sm hidden-xs">
     <%= render 'shared/my_account_button' %>
+  </div>
+
+  <div class="navbar-new-avatar navbar-right-container hidden-md hidden-lg">
+    <%=link_to dashboard_path do %>
+    <%= image_tag 'avatar.png'%>
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
