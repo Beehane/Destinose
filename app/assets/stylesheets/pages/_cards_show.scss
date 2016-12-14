@@ -4,6 +4,7 @@
   width: 85%;
   margin: auto;
   z-index: 100;
+  height: 100%;
 }
 
 .shadow-1 {
@@ -19,6 +20,10 @@
   width: 90%;
   margin: auto;
   opacity: 0.6;
+}
+
+.parent-container {
+  height: 60vh;
 }
 
 // THE PROGRESS BAR
@@ -58,7 +63,7 @@
   // background-image: linear-gradient(to bottom left, #29FF8D 0%, #528BFF 100%);
   background-color: #fff;
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   left: 0px;
   padding: 20px;
