@@ -1,12 +1,12 @@
 
 <div class="container card-wrap text-center">
 
-    <div class="card row">
+    <div class="row">
       <p class="instructions"><strong>tell us if you like what you see</strong><br />and we'll build a recommendation</p>
 
 
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-          <div class="row"><div  style="background-image: url(<%= cl_image_path(@current_card.image, crop: :fill, id: @current_card.id) %>); height: 60vh; background-size: cover;"></div></div>
+          <div class="row"><div style="background-image: url(<%= cl_image_path(@current_card.image, crop: :fill, id: @current_card.id) %>); height: 60vh; background-size: cover;"></div></div>
 
           <div class="row">
             <%= link_to swipe_path(liked: 0, card_id: @current_card.id) do %>
@@ -20,14 +20,27 @@
               </div>
             <% end %>
           </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+                <div class="progress-wrapper">
+                  <div class="text-left progress-text">Recommendation Strength</div>
+                  <div class="text-right progress-text"><%= @current_strength %>&percnt;</div>
+                </div>
+              <div class="progress-container"><div class="progress-bar" style="width:<%= @current_strength %>%"></div></div>
+
+            </div>
+          </div>
       </div>
 
     </div>
 
+
+
   <%#= link_to "find my destination", results_path if @current_strength >= 4 %>
   <% if @liked.count >= 15 %>
     <div class="row">
-      <div class="col-xs-6 text-center suggestion-bar">
+      <div class="col-xs-12 text-center suggestion-bar">
         <%= link_to results_path do %>
         <div class="suggestion-text">
             Find My Next Destination
@@ -37,7 +50,7 @@
     </div>
   <% else %>
     <div class="row">
-        <div class="col-xs-6 text-center suggestion-bar-grey">
+        <div class="col-xs-12 text-center suggestion-bar-grey">
           <div class="suggestion-text greyed-out">
               Find My Next Destination
           </div>
@@ -45,14 +58,7 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="col-xs-6 text-center progress-container">
-      <div class="progress-text">
-          Recommendation Strength: <%= @current_strength %>&percnt;
-      </div>
-      <div class="progress-bar" style="width:<%= @current_strength %>%"></div>
-    </div>
-  </div>
+
 
 </div>
 
