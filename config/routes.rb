@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Temporary routes
-    get '/landing', to: 'pages#landing'
+    get 'landing', to: 'pages#landing'
+
+    get 'error', to: 'pages#error'
 
 end

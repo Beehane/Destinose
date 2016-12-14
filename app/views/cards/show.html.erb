@@ -16,12 +16,12 @@
               <div class="row">
                 <%= link_to swipe_path(liked: 0, card_id: @current_card.id) do %>
                   <div class="col-xs-6 btn-swipe btn-no">
-                    No
+                    <%= image_tag 'cross.png' %>
                   </div>
                 <% end %>
                 <%= link_to swipe_path(liked: 1, card_id: @current_card.id) do %>
                   <div class="col-xs-6 btn-swipe btn-yes">
-                    Yes
+                   <%= image_tag 'tick.png' %>
                   </div>
                 <% end %>
               </div>
