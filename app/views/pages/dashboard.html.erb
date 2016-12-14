@@ -23,12 +23,15 @@
             <h4><%= link_to reco.country, existing_path(reco) %></h4>
           <% end %>
 
-          <% @act = (Card.near([reco.latitude, reco.longitude], 1000)).size %>
-          <% unless @act < 1 %>
-            <p><%= @act %> things you can do here </p>
-          <% end %>
+
 
           <p>based on <%= reco.swipes.count %> likes, saved on <%= reco.created_at.strftime("%b #{reco.created_at.day.ordinalize}") %></p>
+
+          <% @act = (Card.near([reco.latitude, reco.longitude], 1000)).size %>
+          <% unless @act < 1 %>
+            <p><%= @act %> things you can do near here </p>
+          <% end %>
+
           <p><%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
           <%= link_to 'improve', improve_path(reco) %></p>
           <% end %>
@@ -45,12 +48,15 @@
             <h4><%= link_to reco.country, existing_path(reco) %></h4>
           <% end %>
 
-          <% @act = (Card.near([reco.latitude, reco.longitude], 1000)).size %>
-          <% unless @act < 1 %>
-            <p><%= @act %> things you can do here </p>
-          <% end %>
+
 
           <p>based on <%= reco.swipes.count %> likes, saved on <%= reco.created_at.strftime("%b #{reco.created_at.day.ordinalize}, %Y") %></p>
+
+          <% @act = (Card.near([reco.latitude, reco.longitude], 1000)).size %>
+          <% unless @act < 1 %>
+            <p><%= @act %> things you can do near here </p>
+          <% end %>
+
           <p><%= link_to "view", existing_path(reco) %> | <%= link_to "delete", existing_path(reco), method: :delete %> |
           <%= link_to 'improve', improve_path(reco) %></p>
           <% end %>
