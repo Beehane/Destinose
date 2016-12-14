@@ -10,7 +10,7 @@
             <div class="card-wrap text-center">
               <div class="row">
                   <!-- RENDERING IMAGE -->
-                    <div style="background-image: url(<%= cl_image_path(@current_card.image, crop: :fill, id: @current_card.id) %>); height: 50vh; background-size: cover; background-position: center;"></div>
+                    <div style="background-image: url(<%= cl_image_path(@current_card.image, width: 800, quality: 80, crop: :fill, id: @current_card.id) %>); height: 50vh; background-size: cover; background-position: center;"></div>
               </div>
 
               <div class="row">
