@@ -11,6 +11,16 @@ body {
   background-color: #fff;
 }
 
+a {
+  color: #71A9AB;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4B8431;
+  text-decoration: none;
+}
+
 .blue-body {
   background-color: #00A6E3;
   background-image: linear-gradient(to bottom right, #00A6E3 0%, #BAFFF4 100%);
@@ -21,14 +31,16 @@ body {
   background-attachment: fixed;
 }
 
-a {
+.blue-body a {
   color: #fff;
   text-decoration: none;
 }
 
-a:hover {
+.blue-body a:hover {
   color: $yellow;
   text-decoration: none;
 }
+
+
 
 
