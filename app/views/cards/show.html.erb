@@ -6,7 +6,7 @@
 
 
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-          <div class="row"><div style="background-image: url(<%= cl_image_path(@current_card.image, crop: :fill, id: @current_card.id) %>); height: 60vh; background-size: cover;"></div></div>
+          <div class="row"><div style="background-image: url(<%= cl_image_path(@current_card.image, crop: :fill, id: @current_card.id) %>); height: 60vh; background-size: cover; background-position: center;"></div></div>
 
           <div class="row">
             <%= link_to swipe_path(liked: 0, card_id: @current_card.id) do %>
