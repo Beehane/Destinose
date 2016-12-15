@@ -112,7 +112,7 @@ class CardsController < ApplicationController
 
   def near_card_ids
     @near_card_ids = []
-    Card.near(@likes_centroid, 1_800).each do |x|
+    Card.near(@likes_centroid, 2_000).each do |x|
     @near_card_ids << x.id
     end
   end
