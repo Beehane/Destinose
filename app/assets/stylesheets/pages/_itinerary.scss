@@ -1,0 +1,56 @@
+.activity-card {
+  background-color: #fff;
+  height: 300px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.activity-card-photo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  max-width: 100%;
+  height: auto;
+}
+
+.activity-card-text {
+  // position: absolute;
+  // top: 210px;
+  margin: auto;
+  text-align: left;
+  width: 270px;
+}
+
+.caption {
+  font-size: 10px;
+  color: #666;
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+.itinerary-footer {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  font-size: 21px;
+  font-weight: bolder;
+  color: #666;
+}
+
+.itinerary-footer img {
+  width: 150px;
+  opacity: 0.5;
+  margin: 5px 0 -5px 0;
+}
+
+.itinerary-footer a {
+  color: #3F9BD3;
+}

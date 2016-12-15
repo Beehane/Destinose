@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'out_of_cards', to: 'pages#out_of_cards'
 
+  get 'itinerary', to: 'recommendations#itinerary'
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
