@@ -9,18 +9,25 @@ module RecommendationsHelper
       @transport1 = {
         name: r2r_query["routes"][0]["name"],
         price: r2r_query["routes"][0]["indicativePrices"][0]["price"],
-        url: "https://www.rome2rio.com/s/#{card1.latitude},#{card1.longitude}/#{card2.latitude},#{card2.longitude}"
+        url: "https://www.rome2rio.com/s/#{card1.latitude},#{card1.longitude}/#{card2.latitude},#{card2.longitude}",
+        time: time_to_words(r2r_query["routes"][0]["totalDuration"])
       } unless r2r_query["routes"][0].nil? || r2r_query["routes"][0]["indicativePrices"].nil?
       @transport2 = {
         name: r2r_query["routes"][1]["name"],
         price: r2r_query["routes"][1]["indicativePrices"][0]["price"],
-        url: "https://www.rome2rio.com/s/#{card1.latitude},#{card1.longitude}/#{card2.latitude},#{card2.longitude}"
+        url: "https://www.rome2rio.com/s/#{card1.latitude},#{card1.longitude}/#{card2.latitude},#{card2.longitude}",
+        time: time_to_words(r2r_query["routes"][1]["totalDuration"])
       } unless r2r_query["routes"][1].nil? || r2r_query["routes"][1]["indicativePrices"].nil?
       @transport3 = {
         name: r2r_query["routes"][2]["name"],
         price: r2r_query["routes"][2]["indicativePrices"][0]["price"],
-        url: "https://www.rome2rio.com/s/#{card1.latitude},#{card1.longitude}/#{card2.latitude},#{card2.longitude}"
+        url: "https://www.rome2rio.com/s/#{card1.latitude},#{card1.longitude}/#{card2.latitude},#{card2.longitude}",
+        time: time_to_words(r2r_query["routes"][2]["totalDuration"])
       } unless r2r_query["routes"][2].nil? || r2r_query["routes"][2]["indicativePrices"].nil?
+  end
+
+  def time_to_words(minutes)
+    distance_of_time_in_words(Time.at(0), Time.at(minutes * 60))
   end
 
   def which_icon(transport_name)

@@ -71,8 +71,8 @@ class CardsController < ApplicationController
   end
 
   def next_card
-    if @liked.count >= 20
-      cluster_biasing #begins
+    if @liked.count >= 30
+      cluster_biasing #the hunt begins
     else
       all_card_ids
       @seen = @liked + @disliked
