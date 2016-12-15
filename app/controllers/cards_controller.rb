@@ -106,7 +106,7 @@ class CardsController < ApplicationController
 
   def near_card_ids
     @near_card_ids = []
-    Card.near(@temp_centroid, 1000).each do |x|
+    Card.near(@temp_centroid, 2_500).each do |x|
     @near_card_ids << x.id
     end
   end
