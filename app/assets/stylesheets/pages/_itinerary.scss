@@ -109,3 +109,22 @@
 .last-card {
   margin-bottom: 50px;
 }
+
+.day-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-card h3 {
+  font-weight: bolder;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #fff;
+  padding: 5px;
+}
+
+.day-card p {
+  padding: 0;
+  margin-top: 10px;
+  color: #fff;
+}

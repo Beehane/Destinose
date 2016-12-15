@@ -3,7 +3,7 @@
 <h4 class="white-title">looks like you'd love</h4>
 <h3 class="white-title"><%= @country %></h3>
 <p>out of <strong><%= @liked.count %></strong> likes, <strong><%= @cluster[0].count %></strong> were here. Explore the map!</p>
-<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %> | <%= link_to 'start over', restart_path %></p>
+<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %>&emsp;|&emsp;<%= link_to 'keep swiping', next_card_path %>&emsp;|&emsp;<%= link_to 'start over', restart_path %></p>
 
 
 <%= render 'recommendation' %>
@@ -16,7 +16,7 @@
 <div class="row">
       <%= link_to itinerary_path do %>
         <div class="col-xs-12 text-center suggestion-bar">
-              Auto-Plan My Trip
+              Auto-Plan This Trip
         </div>
       <% end %>
 </div>
