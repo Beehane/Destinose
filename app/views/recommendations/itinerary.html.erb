@@ -1,0 +1,34 @@
+<div class="blue-body Site">
+<div class="container">
+<div class="text-center suggestionation Site-content">
+
+<h4>here's how you could tackle</h4>
+<h3><%= @country %></h3>
+
+<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow my itinerary', next_card_path %> | <%= link_to 'start over', restart_path %></p>
+
+
+    <div class="card-deck-wrapper">
+      <div class="card-columns">
+      <% @trip_array.each do |card| %>
+        <div class="card">
+            <%= cl_image_tag(card.image, width: 400, height: 200, quality: 80, crop: :fill, class: 'card-img-top') %>
+            <div class="card-block">
+              <h5><%= card.name %></h5>
+              <p class="card-text caption"><%= card.description %></p>
+            </div>
+        </div>
+      <% end %>
+      <% rome2rio(@trip_array) %>
+      </div>
+    </div>
+
+ </div>
+</div>
+</div><!-- end body -->
+
+
+<div class="itinerary-footer text-center">
+    round-trip flights are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a>
+    <br /><a href="http://skyscanner.net" target="_blank"><%= image_tag 'skyscanner.png'%></a>
+</div>
