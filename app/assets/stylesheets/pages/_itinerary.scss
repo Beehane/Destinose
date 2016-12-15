@@ -1,29 +1,52 @@
 .activity-card {
   background-color: #fff;
-  height: 300px;
-  margin: 10px;
-  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.activity-card-photo {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  max-width: 100%;
-  height: auto;
+.activity-card p {
+  padding: 0 10px 15px 10px;
+  font-size: 14px;
 }
 
-.activity-card-text {
-  // position: absolute;
-  // top: 210px;
-  margin: auto;
-  text-align: left;
-  width: 270px;
+.activity-card h5 {
+  padding-top: 8px;
+  font-size: 16px;
 }
 
-.caption {
-  font-size: 10px;
+.transport {
+  margin: 20px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-weight: lighter;
   color: #666;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.transport-icon {
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.transport-line-top {
+  border-left: 3px solid rgba(255,255,255,0.2);
+  height: 20px;
+  margin: -5px auto -15px auto;
+  text-align: center;
+  position: relative;
+  left: 50%;
+}
+
+.transport-line-bottom {
+  border-left: 3px solid rgba(255,255,255,0.2);
+  height: 20px;
+  margin: -13px auto 5px auto;
+  text-align: center;
+  position: relative;
+  left: 50%;
 }
 
 .Site {
@@ -53,4 +76,20 @@
 
 .itinerary-footer a {
   color: #3F9BD3;
+}
+
+.flights a {
+  color: #3F9BD3;
+}
+
+.flights {
+  padding: 10px 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.flights img {
+  width: 150px;
+  opacity: 0.5;
+  margin: 0px 0 5px 0;
 }

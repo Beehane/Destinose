@@ -1,5 +1,8 @@
-<% @liked = JSON.parse(cookies[:liked]) %>
-<% @disliked = JSON.parse(cookies[:disliked]) %>
-<h5 class="text-center">Based on <%= @liked.count + @disliked.count %> images, you'd like <%= @country %></h5>
-<h5 class='text-center'><%= link_to 'improve this result', improve_path %></h5>
-<%= render 'recommendation' %>
+
+<div class="blue-body" style="padding-top: 20px;">
+  <% @liked = JSON.parse(cookies[:liked]) %>
+  <% @disliked = JSON.parse(cookies[:disliked]) %>
+  <h5 class="text-center">Based on <%= @liked.count + @disliked.count %> images, you'd like <%= @country %></h5>
+  <h5 class='text-center'><%= link_to 'improve this result', improve_path %></h5>
+  <%= render 'recommendation' %>
+</div>

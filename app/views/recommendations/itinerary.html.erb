@@ -2,38 +2,48 @@
 <div class="container">
 <div class="text-center suggestionation Site-content">
 
-<h4>here's how you could tackle</h4>
 <h3><%= @country %></h3>
 
 <p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow my itinerary', next_card_path %> | <%= link_to 'start over', restart_path %></p>
 
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
 
-    <div class="card-deck-wrapper">
-      <div class="card-columns">
+      <div class="activity-card flights">
+        <h5>round-trip flights from <%= @user_country %> are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</h5>
+        <a href="http://skyscanner.net" target="_blank"><%= image_tag 'skyscanner.png'%></a>
+      </div>
+
+      <div class="transport-line-bottom"></div>
+
+
+
       <% @trip_array.each_cons(2) do |card1, card2| %>
-        <div class="card">
-            <%= cl_image_tag(card1.image, width: 400, height: 200, quality: 80, crop: :fill, class: 'card-img-top') %>
-            <div class="card-block">
+        <div class="activity-card">
+            <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+
               <h5><%= card1.name %></h5>
-              <p class="card-text caption"><%= card1.description %></p>
-            </div>
+              <p><%= card1.description %></p>
         </div>
+
         <% rome2rio([card1.id, card2.id]) %>
-        <div class="transport-info">
-          <% if @transport1 %>
-          <p>then <%= @transport1[:name].downcase %> for <strong><%= @transport1[:price] %></strong>&euro;
-          <% end %>
-          <% if @transport2 %>
-          , <%= @transport2[:name].downcase %> for <strong><%= @transport2[:price] %></strong>&euro;
-          <% end %>
-          <% if @transport3 %>
-           or <%= @transport3[:name].downcase %> for <strong><%= @transport3[:price] %></strong>&euro;
-          <% end %>
-          </p>
-        </div>
-      <% end %>
 
-
+            <% if @transport1 %>
+              <div class="transport-line-top"></div>
+                <%= link_to @transport1[:url] do %>
+                    <div class="activity-card transport">
+                    <%= image_tag which_icon(@transport1[:name]), class: "transport-icon" %> <strong><%= @transport1[:price] %></strong>&euro;
+                      <% if @transport2 %>
+                        <%= image_tag which_icon(@transport2[:name]), class: "transport-icon" %> <strong><%= @transport2[:price] %></strong>&euro;
+                      <% end %>
+                      <% if @transport3 %>
+                        <%= image_tag which_icon(@transport3[:name]), class: "transport-icon" %><strong><%= @transport3[:price] %></strong>&euro;
+                       <% end %>
+                    </div>
+                    <div class="transport-line-bottom"></div>
+              <% end %>
+          <% end %>
+          <% end %><!-- END OF LOOP -->
       </div>
     </div>
 
@@ -43,6 +53,6 @@
 
 
 <div class="itinerary-footer text-center">
-    round-trip flights are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a>
+    round-trip flights from <%= @user_country %> are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a>
     <br /><a href="http://skyscanner.net" target="_blank"><%= image_tag 'skyscanner.png'%></a>
 </div>
