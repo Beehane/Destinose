@@ -41,6 +41,7 @@ class CardsController < ApplicationController
   def restart
     cookies.delete(:liked)
     cookies.delete(:disliked)
+    cookies.delete(:trip)
     redirect_to next_card_path
   end
 
@@ -71,7 +72,7 @@ class CardsController < ApplicationController
   end
 
   def next_card
-    if @liked.count >= 30
+    if @liked.count >= 30 || cookies[:trip] == "true"
       cluster_biasing #the hunt begins
     else
       all_card_ids
@@ -104,9 +105,14 @@ class CardsController < ApplicationController
     end
   end
 
+  def trip_grow
+    cookies[:trip] = "true"
+    next_card
+  end
+
   def near_card_ids
     @near_card_ids = []
-    Card.near(@likes_centroid, 2_000).each do |x|
+    Card.near(@likes_centroid, 1_800).each do |x|
     @near_card_ids << x.id
     end
   end
