@@ -49,7 +49,11 @@ class RecommendationsController < ApplicationController
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
       @user_country = request.location.country
-      @user_country_iso = request.location.country_code
+      if request.location.country_code == "RD"
+        @user_country_iso = "ES"
+      else
+        @user_country_iso = request.location.country_code
+      end
       get_quote
     end
 
