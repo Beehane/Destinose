@@ -16,8 +16,8 @@
 
 .transport {
   margin: 20px 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   font-size: 14px;
   font-weight: lighter;
   color: #666;
@@ -104,4 +104,8 @@
   height: 15px;
   opacity: 0.3;
   margin-right: 10px;
+}
+
+.last-card {
+  margin-bottom: 50px;
 }
