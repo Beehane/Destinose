@@ -4,6 +4,7 @@
 
 <h4 class="white-title">Trip Preview</h4>
 <h3 class="white-title"><%= @country %></h3>
+<p>here's what you liked, and how to do it</p>
 
 <p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow this trip', trip_grow_path %> | <%= link_to 'start over', restart_path %></p>
 
