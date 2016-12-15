@@ -13,25 +13,27 @@
 .homepage-center-wrapper {
   color: white;
   text-align: center;
-  height: 90vh;
+  height: 100vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
   h2 {
-    font-size: 35px;
+    font-size: 25px;
     color: white;
+    padding: 6px;
   }
 }
 
 .btn-lg {
-  padding: 15px 10px;
   font-size: 20px;
   border-radius: 30px;
   position: center;
   background-color: #FBCC1C;
   border-color: #FBCC1C;
-  margin-top: 100px;
+  margin-top: 65px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .next {
@@ -42,5 +44,9 @@
 .destination {
   font-weight: bold;
   color: #DCAE1D
+}
+
+.logo {
+width: 250px;
 }
 

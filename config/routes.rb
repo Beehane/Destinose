@@ -31,15 +31,15 @@ Rails.application.routes.draw do
 
   get 'out_of_cards', to: 'pages#out_of_cards'
 
+  get '/landing', to: 'pages#landing'
+
   get 'itinerary', to: 'recommendations#itinerary'
 
+  get 'landing', to: 'pages#landing'
+
   devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # Temporary routes
-    get 'landing', to: 'pages#landing'
-
-    get 'error', to: 'pages#error'
 
 end
