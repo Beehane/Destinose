@@ -20,9 +20,19 @@
         </div>
         <% rome2rio([card1.id, card2.id]) %>
         <div class="transport-info">
-          <p><%= @transport1[:name] %> for <strong><%= @transport1[:price] %></strong>&euro;</p>
+          <% if @transport1 %>
+          <p>then <%= @transport1[:name].downcase %> for <strong><%= @transport1[:price] %></strong>&euro;
+          <% end %>
+          <% if @transport2 %>
+          , <%= @transport2[:name].downcase %> for <strong><%= @transport2[:price] %></strong>&euro;
+          <% end %>
+          <% if @transport3 %>
+           or <%= @transport3[:name].downcase %> for <strong><%= @transport3[:price] %></strong>&euro;
+          <% end %>
+          </p>
         </div>
       <% end %>
+
 
       </div>
     </div>
