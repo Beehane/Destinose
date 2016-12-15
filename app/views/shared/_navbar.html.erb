@@ -23,20 +23,18 @@
 
   <!--- Otherwise render white logo -->
   <% else %>
-  <% if controller_name == "pages" && action_name == 'dashboard' %>
 
 
-  <div class="navbar-logo hidden-sm hidden-xs">
+    <div class="navbar-logo hidden-sm hidden-xs">
 
-  <% unless controller_name == "pages" && action_name =='landing' %>
-    <%=link_to next_card_path do %>
-    <%= image_tag 'logo_white.png'%>
+      <% unless controller_name == "pages" && action_name =='landing' %>
+        <%=link_to next_card_path do %>
+        <%= image_tag 'logo_white.png'%>
+      <% end %>
     <% end %>
-  <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <% end %>
+<% end %>
 
   <!-- Right Navigation -->
   <% unless controller_name == "pages" && action_name == 'dashboard' %>
