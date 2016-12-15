@@ -31,7 +31,8 @@
             <% if @transport1 %>
               <div class="transport-line-top"></div>
                 <%= link_to @transport1[:url] do %>
-                    <div class="activity-card transport">
+                    <div class="activity-card transport transport-wrapper">
+                    <div>
                     <%= image_tag which_icon(@transport1[:name]), class: "transport-icon" %> <strong><%= @transport1[:price] %></strong>&euro;
                       <% if @transport2 %>
                         <%= image_tag which_icon(@transport2[:name]), class: "transport-icon" %> <strong><%= @transport2[:price] %></strong>&euro;
@@ -39,6 +40,8 @@
                       <% if @transport3 %>
                         <%= image_tag which_icon(@transport3[:name]), class: "transport-icon" %><strong><%= @transport3[:price] %></strong>&euro;
                        <% end %>
+                    </div>
+                       <div class="rome2rio-right"><%= image_tag 'rome2rio-logo.png' %></div>
                     </div>
                     <div class="transport-line-bottom"></div>
               <% end %>

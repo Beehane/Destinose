@@ -27,8 +27,8 @@
 .transport-icon {
   margin-left: 10px;
   margin-right: 5px;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 .transport-line-top {
@@ -92,4 +92,16 @@
   width: 150px;
   opacity: 0.5;
   margin: 0px 0 5px 0;
+}
+
+
+.transport-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rome2rio-right img {
+  height: 15px;
+  opacity: 0.3;
+  margin-right: 10px;
 }
