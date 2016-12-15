@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Destinosé - 404</title>
+   <link rel="icon"
+  type="image/png"
+  href="destinose-icon.png">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <style>
     body, html {
       margin: 0;
@@ -21,23 +23,36 @@
     }
 
     .banner h1 {
+      font-size: 25px;
+      font-weight: lighter;
+      justify-content: center;
+      font-weight: bolder;
+      font-family: 'Avenir', 'Helvetica', 'Roboto', 'Arial', 'Open Sans', sans-serif;
+    }
+
+    .banner h3 {
       font-size: 20px;
       font-weight: lighter;
       justify-content: center;
-      padding: 25px;
-      font-family: 'Open Sans', sans-serif;
+      font-weight: lighter;
+      font-family: 'Avenir', 'Helvetica', 'Roboto', 'Arial', 'Open Sans', sans-serif;
+    }
+
+    .banner img {
+      max-width: 300px;
     }
 
     .btn-lg {
      font-size: 20px;
      height: 20px;
+     padding: 0px 15px 0px 15px;
      border-radius: 30px;
      position: center;
-     background-color: #FBCC1C;
-     border-color: #FBCC1C;
-     margin-top: 65px;
+     background-color: #0195cc;
+     border-color: #0195cc;
+     margin-top: 15px;
      color: white;
-     font-family: 'Open Sans', sans-serif;
+     font-family: 'Avenir', 'Helvetica', 'Roboto', 'Arial', 'Open Sans', sans-serif;
      display: inline-block;
      display: inline-block;
      margin-bottom: 0;
@@ -57,12 +72,25 @@
      -moz-user-select: none;
      -ms-user-select: none;
      user-select: none;
+     text-decoration: none;
+   }
+
+   .btn-lg a:hover {
+      background-color: #a6fbff;
+      text-decoration: none;
    }
 
    .btn-primary:hover {
     color: #fff;
     background-color: #2381d0;
     border-color: #1e6eb2;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+
 
   </style>
 </head>
@@ -70,11 +98,13 @@
 <body>
   <!-- This file lives in public/404.html -->
   <!--  <div id="header" role="banner" class="homepage-center-wrapper" style="background-image: linear-gradient(-225deg, rgba(161,221,225,0.9) 0%, rgba(161,221,225,0.4) 50%), url("error_background.jpg");"> -->
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(161,221,225,0.9) 0%, rgba(161,221,225,0.4) 50%), url('error_background.jpg');">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(161,221,225,0.9) 0%, rgba(40,85,86,0.7) 50%), url('error_background.jpg');">
 
    <div class="banner-content">
-    <h1> Oops...Looks like you haven't gone the right direction.</h1>
-    <a href="/landing" class="btn btn-primary btn-lg"> Get back to start </a>
+    <img src="/logo_white.png" />
+    <h1>404 - The page you were looking for ran away.</h1>
+    <h3>We're trying to lure it back, please give us a moment.</h3>
+    <a href="/" class="btn btn-primary btn-lg">Go Back.</a>
   </div>
 
 </body>
