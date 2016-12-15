@@ -90,18 +90,18 @@ class RecommendationsController < ApplicationController
   end
 
 
-  def existing
-    existing_recommendation
+  # def existing
+  #   existing_recommendation
 
 
-    @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
-      marker.lat card.latitude
-      marker.lng card.longitude
-      marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
-    end
+  #   @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
+  #     marker.lat card.latitude
+  #     marker.lng card.longitude
+  #     marker.infowindow "<h1>" + card.name + "</h1>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 200, width: 300, crop: :fill) + "<p>" + card.description + "</p>"
+  #   end
 
-    barycenter
-  end
+  #   barycenter
+  # end
 
   def improve
     existing_recommendation
@@ -109,7 +109,7 @@ class RecommendationsController < ApplicationController
     redirect_to next_card_path
   end
 
-  def existing_recommendation
+  def existing
     @cards = []
     @recommendation = Recommendation.find(params[:id])
     cookies.delete(:liked)
@@ -129,6 +129,7 @@ class RecommendationsController < ApplicationController
     end
     cookies[:liked] = @liked.to_json
     cookies[:disliked] = @disliked.to_json
+    redirect_to results_path
   end
 
   def parse_cookies

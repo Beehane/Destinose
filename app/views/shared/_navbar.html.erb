@@ -3,8 +3,12 @@
   <!-- Logo -->
 
   <div class="navbar-icon">
+
+    <%=link_to restart_path do %>
+
     <% unless controller_name == "pages" && action_name =='landing' %>
-    <%=link_to root_path do %>
+    <%=link_to restart_path do %>
+
     <%= image_tag 'destinose-icon.png'%>
     <% end %>
     <% end %>
@@ -14,7 +18,7 @@
   <% if controller_name == "pages" && action_name == 'dashboard' %>
 
     <div class="navbar-logo hidden-sm hidden-xs">
-      <%=link_to root_path do %>
+      <%=link_to restart_path do %>
       <%= image_tag 'logo_black.png'%>
       <% end %>
     </div>
@@ -23,7 +27,7 @@
   <% else %>
 
     <div class="navbar-logo hidden-sm hidden-xs">
-      <%=link_to root_path do %>
+      <%=link_to restart_path do %>
       <%= image_tag 'logo_white.png'%>
       <% end %>
     </div>
