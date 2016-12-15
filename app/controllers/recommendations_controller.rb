@@ -179,21 +179,27 @@ class RecommendationsController < ApplicationController
     @skyscanner_url = "https://www.skyscanner.net/transport/flights/BCN/#{@country_iso}/anytime/anytime/"
   end
 
+  def itinerary
+    create_cards_array
+
+    @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
+        marker.lat card.latitude
+        marker.lng card.longitude
+        marker.infowindow "<h5>" + card.name + "</h5>" + ActionController::Base.helpers.cl_image_tag(card.image, height: 100, width: 150, crop: :fill) + "<p>" + card.description + "</p>"
+      end
+    barycenter
+    get_quote
+    @cards_near = Card.near(@centroid, 1000)
+    @trip_array = []
+    @cards_near.each do |x|
+      @trip_array << x if @liked.include? x.id
+    end
+  end
+
   private
 
 
   def cluster_cards
-  #   test_coordinates = [
-  #   [-25.279878, -57.524864],
-  #   [-25.275594, -57.513830],
-  #   [-25.279858, -57.529757],
-  #   [-25.280052, -57.530679],
-  #   [-36.84846, 174.763332],
-  #   [-43.84356, 172.739434],
-  #   [-41.28646, 174.776236],
-  #   [-13.163141, -72.544963],
-  #   [10.391049, -75.479426]
-  # ]
     dbscan = DBSCAN(@coordinates, :epsilon => 1800, :min_points => 2, :distance => :haversine_distance2)
     dbscan.results
   end
