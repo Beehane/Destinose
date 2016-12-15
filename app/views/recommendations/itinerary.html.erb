@@ -10,16 +10,20 @@
 
     <div class="card-deck-wrapper">
       <div class="card-columns">
-      <% @trip_array.each do |card| %>
+      <% @trip_array.each_cons(2) do |card1, card2| %>
         <div class="card">
-            <%= cl_image_tag(card.image, width: 400, height: 200, quality: 80, crop: :fill, class: 'card-img-top') %>
+            <%= cl_image_tag(card1.image, width: 400, height: 200, quality: 80, crop: :fill, class: 'card-img-top') %>
             <div class="card-block">
-              <h5><%= card.name %></h5>
-              <p class="card-text caption"><%= card.description %></p>
+              <h5><%= card1.name %></h5>
+              <p class="card-text caption"><%= card1.description %></p>
             </div>
         </div>
+        <% rome2rio([card1.id, card2.id]) %>
+        <div class="transport-info">
+          <p><%= @transport1[:name] %> for <strong><%= @transport1[:price] %></strong>&euro;</p>
+        </div>
       <% end %>
-      <% rome2rio(@trip_array) %>
+
       </div>
     </div>
 
