@@ -23,4 +23,27 @@ module RecommendationsHelper
       } unless r2r_query["routes"][2].nil? || r2r_query["routes"][2]["indicativePrices"].nil?
   end
 
+  def which_icon(transport_name)
+    transport_name.downcase!
+    if transport_name.include? "car"
+      return "car.png"
+    elsif transport_name.include? "drive"
+      return "car.png"
+    elsif transport_name.include? "bus"
+      return "bus.png"
+    elsif transport_name.include? "taxi"
+      return "car.png"
+    elsif transport_name.include? "fly"
+      return "plane.png"
+    elsif transport_name.include? "train"
+      return "train.png"
+    elsif transport_name.include? "subway"
+      return "train.png"
+    elsif transport_name.include? "metro"
+      return "train.png"
+    else
+      return "bus.png"
+    end
+  end
+
 end
