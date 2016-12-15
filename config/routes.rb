@@ -37,5 +37,6 @@ Rails.application.routes.draw do
 
   # Temporary routes
     get '/landing', to: 'pages#landing'
+    get '/error', to: 'pages#error'
 
 end
