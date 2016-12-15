@@ -41,7 +41,7 @@ class CardsController < ApplicationController
   def restart
     cookies.delete(:liked)
     cookies.delete(:disliked)
-    redirect_to root_path
+    redirect_to next_card_path
   end
 
   def swipe

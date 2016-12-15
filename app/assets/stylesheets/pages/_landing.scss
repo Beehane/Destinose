@@ -29,11 +29,18 @@
   font-size: 20px;
   border-radius: 30px;
   position: center;
-  background-color: #FBCC1C;
-  border-color: #FBCC1C;
+  background-color: #0195cc;
+  border-color: #0195cc;
   margin-top: 11px;
   padding-left: 30px;
   padding-right: 30px;
+  color: #fff;
+}
+
+.btn-lg:hover {
+  background-color: #a6fbff;
+  border-color: #a6fbff;
+  color: #0195cc;
 }
 
 .next {
@@ -43,10 +50,14 @@
 
 .destination {
   font-weight: bold;
-  color: #DCAE1D
+  color: #DCAE1D;
 }
 
 .logo {
 width: 250px;
+}
+
+.landing-icon {
+  width: 80px;
 }
 
