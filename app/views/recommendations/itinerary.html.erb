@@ -7,16 +7,14 @@
 
 <p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow my itinerary', next_card_path %> | <%= link_to 'start over', restart_path %></p>
 
-
-    <div class="card-deck-wrapper">
-      <div class="card-columns">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
       <% @trip_array.each_cons(2) do |card1, card2| %>
-        <div class="card">
-            <%= cl_image_tag(card1.image, width: 400, height: 200, quality: 80, crop: :fill, class: 'card-img-top') %>
-            <div class="card-block">
+        <div class="activity-card">
+            <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+
               <h5><%= card1.name %></h5>
-              <p class="card-text caption"><%= card1.description %></p>
-            </div>
+              <p><%= card1.description %></p>
         </div>
         <% rome2rio([card1.id, card2.id]) %>
         <div class="transport-info">
@@ -32,8 +30,6 @@
           </p>
         </div>
       <% end %>
-
-
       </div>
     </div>
 

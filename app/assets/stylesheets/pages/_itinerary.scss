@@ -1,29 +1,17 @@
 .activity-card {
   background-color: #fff;
-  height: 300px;
-  margin: 10px;
-  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.activity-card-photo {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  max-width: 100%;
-  height: auto;
+.activity-card p {
+  padding: 0 10px 15px 10px;
+  font-size: 14px;
 }
 
-.activity-card-text {
-  // position: absolute;
-  // top: 210px;
-  margin: auto;
-  text-align: left;
-  width: 270px;
-}
-
-.caption {
-  font-size: 10px;
-  color: #666;
+.activity-card h5 {
+  padding-top: 8px;
+  font-size: 16px;
 }
 
 .Site {
