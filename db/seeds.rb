@@ -19,7 +19,7 @@ juan = User.create(
   )
 
 card1 = Card.create(
-  name: "Auckland, New Zealand",
+  name: "Auckland",
   latitude: -36.84846,
   longitude: 174.763332,
   description: "A view from Mount Roskill",
@@ -27,7 +27,7 @@ card1 = Card.create(
   )
 
 card2 = Card.create(
-  name: "Dar Es Salam, Tanzania",
+  name: "Dar Es Salam",
   latitude: -6.792354,
   longitude: 39.208328,
   description: "A view from the center",
@@ -35,7 +35,7 @@ card2 = Card.create(
   )
 
 Card.create(
-  name: "Magnet Bay, New Zealand",
+  name: "Magnet Bay",
   latitude: -43.84356,
   longitude: 172.739434,
   description: "A paradise for surfers",
@@ -43,7 +43,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Udaipur, India",
+  name: "Udaipur",
   latitude: 24.585445,
   longitude: 73.712479,
   description: "A spiritural retreat in India",
@@ -51,7 +51,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Semien Mountains, Ethiopia",
+  name: "Semien Mountains",
   latitude: 13.301634,
   longitude: 38.295738,
   description: "A resourcing trip for nature lovers",
@@ -59,7 +59,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Kendwa, Zanzibar",
+  name: "Kendwa",
   latitude: -6.165917,
   longitude: 39.202641,
   description: "A peaceful pool and beach retreat",
@@ -67,7 +67,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Tempelhof Berlin, Germany",
+  name: "Tempelhof Berlin",
   latitude: 52.457553,
   longitude: 13.391103,
   description: "The starting point of your journey to Germany",
@@ -75,7 +75,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Wellington, New Zealand",
+  name: "Wellington",
   latitude: -41.28646,
   longitude: 174.776236,
   description: "A view from Mount Roskill",
@@ -83,7 +83,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Bronte Beach Sydney, Australia",
+  name: "Bronte Beach Sydney",
   latitude: -33.86882,
   longitude: 151.209296,
   description: "The next coolest beach",
@@ -91,7 +91,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Joshua Tree CA, USA",
+  name: "Joshua Tree CA",
   latitude: 34.134728,
   longitude: -116.313066,
   description: "The Good, the Bad and the Ugly, or so...",
@@ -99,7 +99,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Machu Picchu, Peru",
+  name: "Machu Picchu",
   latitude: -13.163141,
   longitude: -72.544963,
   description: "Your one and only immersion into the sacred world of Incas",
@@ -107,7 +107,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Valle de Cocora, Colombia",
+  name: "Valle de Cocora",
   latitude: 4.638054,
   longitude: -75.487783,
   description: "Nature offers you its finest",
@@ -115,7 +115,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Old Town, Cartagena, Colombia",
+  name: "Old Town, Cartagena",
   latitude: 10.391049,
   longitude: -75.479426,
   description: "Witness history in the colorful colonial streets of Cartagena",
@@ -123,7 +123,7 @@ Card.create(
   )
 
 Card.create(
-  name: "Asakusa, Tokyo, Japan",
+  name: "Asakusa, Tokyo",
   latitude: 35.711877,
   longitude: 139.796697,
   description: "Deep dive into vibrant capital of Japan",
@@ -164,7 +164,7 @@ Swipe.create(
 #
 
 Card.create(
-  name: "Lake Hawea, New Zealand",
+  name: "Lake Hawea",
   latitude: -44.4696976,
   longitude: 169.3014845,
   description: "Wonder in the towering peaks of Mackenzie Country",
@@ -172,7 +172,7 @@ Card.create(
 )
 
 Card.create(
-  name: "Hobbiton, New Zealand",
+  name: "Hobbiton",
   latitude: -37.8108803,
   longitude: 175.7764607,
   description: "See how Frodo and other lesser-known Hobbits lived back in the Tolkien era",
@@ -180,7 +180,7 @@ Card.create(
 )
 
 Card.create(
-  name: "Lake Tekapo, New Zealand",
+  name: "Lake Tekapo",
   latitude: -44.004674,
   longitude: 170.477121,
   description: "See how Frodo and other Hobbits lived back in the middle ages",
@@ -252,7 +252,7 @@ Card.create(
 )
 
 Card.create(
-  name: "Glenorchy, Queenstown",
+  name: "Glenorchy",
   latitude: -44.835903,
   longitude: 168.405198,
   description: "See where Frodo and Samwise got ambushed by some Orcs",
@@ -284,7 +284,7 @@ Card.create(
 )
 
 Card.create(
-  name: "Stewart Island, New Zealand",
+  name: "Stewart Island",
   latitude: -47.115503,
   longitude: 167.590306,
   description: "scenic little island at the bottom of New Zealand",
@@ -364,7 +364,7 @@ Card.create(
 )
 
 Card.create(
-  name: "Gondar, Ethiopia",
+  name: "Gondar",
   latitude: 12.611548,
   longitude: 37.450227,
   description: "pilgrims attend church on St. Mikaels day, Ethiopia",
@@ -372,7 +372,7 @@ Card.create(
 )
 
 Card.create(
-  name: "Lalibela, Ethiopia",
+  name: "Lalibela",
   latitude: 12.036172,
   longitude: 39.044058,
   description: "see some of the oldest churches in the world in so-called second Jerusalem.",
@@ -459,20 +459,55 @@ Card.create(
   image: "0054_jiy2ts.jpg",
 )
 
+Card.create(
+  name: "Arrowtown Village",
+  latitude: -44.94168759999999,
+  longitude: 168.8358624,
+  description: "a romantic espace in paradise",
+  image: "0055_ktr8nt.jpg",
+)
 
 
+Card.create(
+  name: "Fergburger, Queenstown",
+  latitude: -45.03175009999999,
+  longitude: 168.65947819999997,
+  description: "the mind-blowing burger experience of a lifetime",
+  image: "0056_al5dlx.jpg",
+)
+
+Card.create(
+  name: "Lake Wanaka",
+  latitude: -44.5276371,
+  longitude: 169.12629259999994,
+  description: "a fantastic hike into resourceful New Zealand nature reserve land",
+  image: "0057_s2sk5j.jpg",
+)
 
 
+Card.create(
+  name: "Prime Waterfront Restaurant, Queenstown",
+  latitude: -45.0325887,
+  longitude: 168.6599562,
+  description: "a fancy night out in magical Queenstown",
+  image: "0058_nvpm0b.jpg",
+)
 
 
+Card.create(
+  name: "AJ Hackett Bungy, Queenstown",
+  latitude: -45.009472,
+  longitude: 168.90014500000007,
+  description: "a thrilling plummet towards the earth",
+  image: "0059_nyx14s.png",
+)
 
 
-
-
-
-
-
-
-
-
+Card.create(
+  name: "Shotover jet, Queenstown",
+  latitude: -45.0311622,
+  longitude: 168.66264350000006,
+  description: "rip through the narrow rivers of Otago in high speed",
+  image: "0060_tsbrzn.jpg",
+)
 
