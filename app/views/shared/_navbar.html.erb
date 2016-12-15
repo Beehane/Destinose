@@ -15,34 +15,36 @@
   <!--- Render black logo if on white page -->
   <% if controller_name == "pages" && action_name == 'dashboard' %>
 
-    <div class="navbar-logo hidden-sm hidden-xs">
-      <%=link_to restart_path do %>
-      <%= image_tag 'logo_black.png'%>
-      <% end %>
-    </div>
+  <div class="navbar-logo hidden-sm hidden-xs">
+    <%=link_to restart_path do %>
+    <%= image_tag 'logo_black.png'%>
+    <% end %>
+  </div>
 
   <!--- Otherwise render white logo -->
   <% else %>
+  <% if controller_name == "pages" && action_name == 'dashboard' %>
 
-    <div class="navbar-logo hidden-sm hidden-xs">
-      <%=link_to restart_path do %>
-      <%= image_tag 'logo_white.png'%>
-      <% end %>
-    </div>
+  <div class="navbar-logo hidden-sm hidden-xs">
+    <%=link_to restart_path do %>
+    <%= image_tag 'logo_white.png'%>
+    <% end %>
+    <% end %>
+  </div>
 
   <% end %>
 
   <!-- Right Navigation -->
   <% unless controller_name == "pages" && action_name == 'dashboard' %>
-    <div class="navbar-right-container hidden-sm hidden-xs">
-      <%= render 'shared/my_account_button' %>
-    </div>
+  <div class="navbar-right-container hidden-sm hidden-xs">
+    <%= render 'shared/my_account_button' %>
+  </div>
 
-    <div class="navbar-new-avatar navbar-right-container hidden-md hidden-lg">
-      <%=link_to dashboard_path do %>
-      <%= image_tag 'avatar.png'%>
-      <% end %>
-    </div>
+  <div class="navbar-new-avatar navbar-right-container hidden-md hidden-lg">
+    <%=link_to dashboard_path do %>
+    <%= image_tag 'avatar.png'%>
+    <% end %>
+  </div>
   <% end %>
 
   <!-- Dropdown appearing on mobile only -->
