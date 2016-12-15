@@ -5,7 +5,7 @@
   <div class="navbar-icon">
 
     <% unless controller_name == "pages" && action_name =='landing' %>
-    <%=link_to restart_path do %>
+    <%=link_to next_card_path do %>
 
     <%= image_tag 'destinose-icon.png'%>
     <% end %>
@@ -16,7 +16,7 @@
   <% if controller_name == "pages" && action_name == 'dashboard' %>
 
   <div class="navbar-logo hidden-sm hidden-xs">
-    <%=link_to restart_path do %>
+    <%=link_to next_card_path do %>
     <%= image_tag 'logo_black.png'%>
     <% end %>
   </div>
@@ -25,10 +25,14 @@
   <% else %>
   <% if controller_name == "pages" && action_name == 'dashboard' %>
 
+
   <div class="navbar-logo hidden-sm hidden-xs">
-    <%=link_to restart_path do %>
+
+  <% unless controller_name == "pages" && action_name =='landing' %>
+    <%=link_to next_card_path do %>
     <%= image_tag 'logo_white.png'%>
     <% end %>
+  <% end %>
     <% end %>
   </div>
 
