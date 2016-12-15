@@ -5,7 +5,7 @@
 <h4 class="white-title">Trip Preview</h4>
 <h3 class="white-title"><%= @country %></h3>
 
-<p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow this trip', next_card_path %> | <%= link_to 'start over', restart_path %></p>
+<p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow this trip', trip_grow_path %> | <%= link_to 'start over', restart_path %></p>
 
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
