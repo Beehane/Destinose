@@ -2,7 +2,7 @@
 
 <h4 class="white-title">looks like you'd love</h4>
 <h3 class="white-title"><%= @country %></h3>
-<p class="explanation"><strong><%= (@cluster[0].count.fdiv(@liked.count) * 100).to_i  %>%</strong> of places you liked were in <%= @country %></p>
+<p class="explanation"><strong><%= (@largest_cluster.count.fdiv(@liked.count) * 100).to_i  %>%</strong> of places you liked were in <%= @country %></p>
 <p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %> | <%= link_to 'start over', restart_path %></p>
 
 
@@ -23,4 +23,3 @@
 
 </div>
 </div><!-- blue-body -->
-<!-- Out of <%#= @liked.count %> images you liked, <%#= @cluster[0].count %> of them were in <%= @country %>. <%# if @cluster.key?(1) %>You also really liked <%= @country_b %><%# end %><%# if @cluster.key?(2) %> and <%= @country_c %>, too<%# end %> -->
