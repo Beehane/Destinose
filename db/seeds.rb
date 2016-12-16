@@ -24,6 +24,7 @@ card1 = Card.create(
   longitude: 174.763332,
   description: "A view from Mount Roskill",
   image: "0001_wtzczu.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 card2 = Card.create(
@@ -32,6 +33,7 @@ card2 = Card.create(
   longitude: 39.208328,
   description: "A view from the center",
   image: "0002_kn7mgv.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -40,6 +42,7 @@ Card.create(
   longitude: 172.739434,
   description: "A paradise for surfers",
   image: "0003_o4wppe.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -48,6 +51,7 @@ Card.create(
   longitude: 73.712479,
   description: "A spiritural retreat in India",
   image: "0004_yfslxz.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -56,6 +60,7 @@ Card.create(
   longitude: 38.295738,
   description: "A resourcing trip for nature lovers",
   image: "0005_la0kl2.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -64,6 +69,7 @@ Card.create(
   longitude: 39.202641,
   description: "A peaceful pool and beach retreat",
   image: "0006_sifyoy.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -72,6 +78,7 @@ Card.create(
   longitude: 13.391103,
   description: "The starting point of your journey to Germany",
   image: "0007_tdobfx.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -80,6 +87,7 @@ Card.create(
   longitude: 174.776236,
   description: "A view from Mount Roskill",
   image: "0008_mmoahn.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -88,6 +96,7 @@ Card.create(
   longitude: 151.209296,
   description: "The next coolest beach",
   image: "0009_tzla0d.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -96,6 +105,7 @@ Card.create(
   longitude: -116.313066,
   description: "The Good, the Bad and the Ugly, or so...",
   image: "0010_iccdep.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -104,6 +114,7 @@ Card.create(
   longitude: -72.544963,
   description: "Your one and only immersion into the sacred world of Incas",
   image: "0011_oqdju0.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -112,6 +123,7 @@ Card.create(
   longitude: -75.487783,
   description: "Nature offers you its finest",
   image: "0012_cyh4ik.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -120,6 +132,7 @@ Card.create(
   longitude: -75.479426,
   description: "Witness history in the colorful colonial streets of Cartagena",
   image: "0013_w7vqx8.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 Card.create(
@@ -128,6 +141,7 @@ Card.create(
   longitude: 139.796697,
   description: "Deep dive into vibrant capital of Japan",
   image: "0014_gvmbxp.jpg",
+  time: (60 + rand(0..4) * 30)
   )
 
 #
@@ -169,6 +183,7 @@ Card.create(
   longitude: 169.3014845,
   description: "Wonder in the towering peaks of Mackenzie Country",
   image: "0015_wjr0ks.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -177,6 +192,7 @@ Card.create(
   longitude: 175.7764607,
   description: "See how Frodo and other lesser-known Hobbits lived back in the Tolkien era",
   image: "0016_tmcq9m.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -185,6 +201,7 @@ Card.create(
   longitude: 170.477121,
   description: "See how Frodo and other Hobbits lived back in the middle ages",
   image: "0017_tsjpws.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -193,6 +210,7 @@ Card.create(
   longitude: 135.768029,
   description: "Get absolutely bamboozled in this serene forest",
   image: "0018_h9xc6h.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -201,6 +219,7 @@ Card.create(
   longitude: 139.770377,
   description: "Where all things oceanic go to be sold",
   image: "0019_o2xsyc.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -209,6 +228,7 @@ Card.create(
   longitude: 139.730162,
   description: "A nice place to witness Tokyo in all its calm and bustle",
   image: "0020_hwl9yp.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -217,6 +237,7 @@ Card.create(
   longitude: 139.778171,
   description: "A nice place to witness Tokyo in all its calm and bustle",
   image: "0021_rnw38d.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -225,6 +246,7 @@ Card.create(
   longitude: 135.491450,
   description: "Spend a night in a Japanese capsule hotel",
   image: "0022_svtqin.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -233,6 +255,7 @@ Card.create(
   longitude: 139.811478,
   description: "The worlds largest underwater floodwater drainage system",
   image: "0023_n3x474.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -241,6 +264,7 @@ Card.create(
   longitude: 138.462128,
   description: "See Japan's famous hot spring snow monkeys",
   image: "0024_r5bgls.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -249,6 +273,7 @@ Card.create(
   longitude: -67.773955,
   description: "Bolivia's famous red-coloured, high-altitude, flamingo-infested lake",
   image: "0025_f3vdxc.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -257,6 +282,7 @@ Card.create(
   longitude: 168.405198,
   description: "See where Frodo and Samwise got ambushed by some Orcs",
   image: "0027_fsb37n.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -265,6 +291,7 @@ Card.create(
   longitude: 114.108882,
   description: "scenic little island just outside of Hong Kong",
   image: "0028_wnbzqc.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -273,6 +300,7 @@ Card.create(
   longitude: 114.145553,
   description: "a picturesque walkway above Hong Kong",
   image: "0029_oe2lsy.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -281,6 +309,7 @@ Card.create(
   longitude: 114.173458,
   description: "bustling downtown area of Hong Kong with plenty of great eateries and souvenir stands.",
   image: "0030_foeidl.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -289,6 +318,7 @@ Card.create(
   longitude: 167.590306,
   description: "scenic little island at the bottom of New Zealand",
   image: "0031_fknhms.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -297,6 +327,7 @@ Card.create(
   longitude: 37.469667,
   description: "like something out of Game of Thrones, this is one of the oldest still-standing castles in the world and UNESCO protected.",
   image: "0033_atpcvs.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -305,6 +336,7 @@ Card.create(
   longitude: 73.876752,
   description: "by train is one of the best ways to get around India.",
   image: "0034_bmfenu.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -313,6 +345,7 @@ Card.create(
   longitude: 73.704867,
   description: "overwhelm your senses",
   image: "0035_puhb8i.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -321,6 +354,7 @@ Card.create(
   longitude: 73.728979,
   description: "overwhelm your senses",
   image: "0036_rt41ck.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -329,6 +363,7 @@ Card.create(
   longitude: 73.021703,
   description: "overwhelm your senses",
   image: "0037_ljvb8h.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -337,6 +372,7 @@ Card.create(
   longitude: 73.018495,
   description: "giant goddamn fort in India",
   image: "0038_oocecf.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -345,6 +381,7 @@ Card.create(
   longitude: 75.858973,
   description: "quaint little Temple over the hill from Jaipur",
   image: "0039_enjq0e.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -353,6 +390,7 @@ Card.create(
   longitude: 38.357046,
   description: "incredible, peaceful views across the Simiens",
   image: "0041_jww2jm.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -361,6 +399,7 @@ Card.create(
   longitude: 38.186259,
   description: "walk along spectacular ridges and peaks",
   image: "0042_cdd6zw.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -369,6 +408,7 @@ Card.create(
   longitude: 37.450227,
   description: "pilgrims attend church on St. Mikaels day, Ethiopia",
   image: "0043_pte00s.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -377,6 +417,7 @@ Card.create(
   longitude: 39.044058,
   description: "see some of the oldest churches in the world in so-called second Jerusalem.",
   image: "0044_bzlyfv.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -385,6 +426,7 @@ Card.create(
   longitude: 40.552894,
   description: "drive across dried lava to the Erta Ale active crater",
   image: "0045_md0lc7.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -393,6 +435,7 @@ Card.create(
   longitude: 40.661662,
   description: "stand next to an active volcano in Ethiopia",
   image: "0046_dshwha.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -401,6 +444,7 @@ Card.create(
   longitude: 40.344731,
   description: "heal your wounds with this salty paradise",
   image: "0047_ehboxr.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -409,6 +453,7 @@ Card.create(
   longitude: 40.298967,
   description: "one of the hottest, most colourful places on Earth",
   image: "0048_bfokpi.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -417,6 +462,7 @@ Card.create(
   longitude: 40.295554,
   description: "stand amongst towers of salt",
   image: "0049_ynauak.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -425,6 +471,7 @@ Card.create(
   longitude: 54.556736,
   description: "one of the most fun things you can do in an SUV",
   image: "0050_rfezwb.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -433,6 +480,7 @@ Card.create(
   longitude: 39.407557,
   description: "swim with dolphins and sea turtles",
   image: "0051_zx712v.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -441,6 +489,7 @@ Card.create(
   longitude: 2.164691,
   description: "see the vibrant active streets of Barcelona",
   image: "0052_czpa4k.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -449,6 +498,7 @@ Card.create(
   longitude: 168.637684,
   description: "one of the most incredible way to see Queenstown",
   image: "0053_kgorqt.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -457,6 +507,7 @@ Card.create(
   longitude: 139.702865,
   description: "be dazzled by robots, animals and dancers at this glitzy restaurant",
   image: "0054_jiy2ts.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -465,6 +516,7 @@ Card.create(
   longitude: 168.8358624,
   description: "a romantic espace in paradise",
   image: "0055_ktr8nt.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 
@@ -474,6 +526,7 @@ Card.create(
   longitude: 168.65947819999997,
   description: "the mind-blowing burger experience of a lifetime",
   image: "0056_al5dlx.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 Card.create(
@@ -482,6 +535,7 @@ Card.create(
   longitude: 169.12629259999994,
   description: "a fantastic hike into resourceful New Zealand nature reserve land",
   image: "0057_s2sk5j.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 
@@ -491,6 +545,7 @@ Card.create(
   longitude: 168.6599562,
   description: "a fancy night out in magical Queenstown",
   image: "0058_nvpm0b.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 
 
@@ -500,6 +555,7 @@ Card.create(
   longitude: 168.90014500000007,
   description: "a thrilling plummet towards the earth",
   image: "0059_nyx14s.png",
+  time: (60 + rand(0..4) * 30)
 )
 
 
@@ -509,5 +565,6 @@ Card.create(
   longitude: 168.66264350000006,
   description: "rip through the narrow rivers of Otago in high speed",
   image: "0060_tsbrzn.jpg",
+  time: (60 + rand(0..4) * 30)
 )
 

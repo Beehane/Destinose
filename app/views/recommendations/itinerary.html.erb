@@ -4,9 +4,10 @@
 
 <h4 class="white-title">Trip Preview</h4>
 <h3 class="white-title"><%= @country %></h3>
-<p>here's what you liked, and how to do it</p>
+<p class="explanation">here's everything you liked so far.</p>
+<p class="explanation">you'll need at least <strong>4 days</strong> for this trip.</p>
 
-<p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow this trip', trip_grow_path %> | <%= link_to 'start over', restart_path %></p>
+<p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %>&emsp;|&emsp;<%= link_to 'grow this trip', trip_grow_path %>&emsp;|&emsp;<%= link_to 'start over', restart_path %></p>
 
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -19,50 +20,115 @@
       <div class="transport-line-bottom"></div>
 
 
+      <% daycount = 1 %>
+      <% timecount = 0 %>
+      <% activitycount = 0 %>
 
       <% @trip_array.each_cons(2) do |card1, card2| %>
-        <div class="activity-card">
-            <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
 
-              <h5><%= card1.name %></h5>
-              <p><%= card1.description %></p>
+        <% if timecount == 0 %>
+          <div class="day">
+        <% end %>
+
+
+        <div class="activity-card">
+          <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+
+          <h5><%= card1.name %></h5>
+          <p><%= card1.description %></p>
+          <p class="time"><%= time_to_words(card1.time) %></p>
         </div>
 
         <% rome2rio([card1.id, card2.id]) %>
 
-            <% if @transport1 %>
-              <div class="transport-line-top"></div>
-                <%= link_to @transport1[:url] do %>
-                    <div class="activity-card transport transport-wrapper">
-                    <div>
-                    <%= image_tag which_icon(@transport1[:name]), class: "transport-icon" %> <strong><%= @transport1[:price] %></strong>&euro;
-                      <% if @transport2 %>
-                        <%= image_tag which_icon(@transport2[:name]), class: "transport-icon" %> <strong><%= @transport2[:price] %></strong>&euro;
-                      <% end %>
-                      <% if @transport3 %>
-                        <%= image_tag which_icon(@transport3[:name]), class: "transport-icon" %><strong><%= @transport3[:price] %></strong>&euro;
-                       <% end %>
-                       &emsp;<%= @transport1[:time] %>
-                    </div>
-
-                       <div class="rome2rio-right"><%= image_tag 'rome2rio-logo.png' %></div>
-                    </div>
-
-              <% end %>
-
+        <% if @transport1 %>
+          <div class="transport-line-top"></div>
+          <%= link_to @transport1[:url] do %>
+            <div class="activity-card transport transport-wrapper">
+              <div>
+                <%= image_tag which_icon(@transport1[:name]), class: "transport-icon" %> <strong><%= @transport1[:price] %></strong>&euro;
+                <% if @transport2 %>
+                  <%= image_tag which_icon(@transport2[:name]), class: "transport-icon" %> <strong><%= @transport2[:price] %></strong>&euro;
+                <% end %>
+                <% if @transport3 %>
+                  <%= image_tag which_icon(@transport3[:name]), class: "transport-icon" %><strong><%= @transport3[:price] %></strong>&euro;
+                <% end %>
+                 &emsp;<%= @transport1[:time] %>
+              </div>
+              <div class="rome2rio-right"><%= image_tag 'rome2rio-logo.png' %></div>
+            </div>
           <% end %>
-          <div class="transport-line-bottom"></div>
-          <% end %><!-- END OF LOOP -->
+        <% end %>
+        <div class="transport-line-bottom"></div>
 
-          <% card1 = @trip_array.last %>
-          <div class="activity-card last-card">
-            <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
 
-              <h5><%= card1.name %></h5>
-              <p><%= card1.description %></p>
+        <% timecount += card1.time %>
+        <% activitycount += 1 %>
+
+
+        <% if timecount >= 240 %>
+            <div class="day-card text-left">
+              <div>
+                <h3>DAY <%= daycount %></h3>
+              </div>
+
+              <div class="text-right">
+                <p><%= activitycount %> activities</p>
+              </div>
+            </div>
+            <% daycount += 1 %>
+            <% timecount = 0 %>
+            <% activitycount = 0 %>
           </div>
+        <% else %>
+          <% if card2 ==  @trip_array.last %>
+              <div class="day-card text-left">
+                <div>
+                  <h3>DAY <%= daycount %></h3>
+                </div>
+
+                <div class="text-right">
+                  <p>2 activities</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+
+      <% end %><!-- END OF LOOP -->
+
+
+      <% if timecount == 0 %>
+        <div class="day">
+      <% end %>
+
+      <% card1 = @trip_array.last %>
+      <div class="activity-card last-card">
+        <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+
+          <h5><%= card1.name %></h5>
+          <p><%= card1.description %></p>
+          <p class="time"><%= time_to_words(card1.time) %></p>
       </div>
+      <% if timecount == 0 %>
+          <div class="day-card text-left">
+            <div>
+              <h3>DAY <%= daycount %></h3>
+            </div>
+
+            <div class="text-right">
+              <p>1 activity</p>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+
+
+
     </div>
+  </div>
 
  </div>
 </div>
@@ -70,6 +136,6 @@
 
 
 <div class="itinerary-footer text-center">
-    round-trip flights from <%= @user_country %> are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;</a>
+    round-trip flights from <%= @user_country %> are <a href="<%= @skyscanner_url %>"><%= @quote.round %>&euro;
     <br /><a href="http://skyscanner.net" target="_blank"><%= image_tag 'skyscanner.png'%></a>
 </div>

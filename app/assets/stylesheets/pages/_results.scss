@@ -51,3 +51,20 @@
 .gm-style-mtc {
   display: none;
 }
+.explanation {
+  color: white;
+  opacity: 0.5;
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+.day {
+  position: relative;
+  padding-top: 45px;
+}
+
+.day-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
