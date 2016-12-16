@@ -41,13 +41,13 @@ class RecommendationsController < ApplicationController
 
     @cluster = cluster_cards
 
-    largest_cluster
+    # largest_cluster
 
-    if @largest_cluster.nil?
+    if @cluster[0].nil?
       redirect_to regular_result_path
     else
-      @centroid = find_centroid(@largest_cluster)
-      address = Geocoder.search(@largest_cluster[1]).first.data["address_components"]
+      @centroid = find_centroid(@cluster[0])
+      address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
       @user_country = request.location.country
@@ -73,11 +73,12 @@ class RecommendationsController < ApplicationController
 
   end
 
-  def largest_cluster
-    redirect_to regular_result_path if @cluster[0].nil?
-    @cluster.delete(-1)
-    @largest_cluster = (@cluster.sort_by { |key, val| -val.count })[0][1]
-  end
+  # def largest_cluster
+  #   redirect_to regular_result_path if @cluster[0].nil?
+  #   @cluster.delete(-1)
+  #   @largest_cluster = (@cluster.sort_by { |key, val| -val.count })[0].try(:[], 1)
+
+  # end
 
   def find_centroid(cluster)
     return Geocoder::Calculations.geographic_center(cluster)
