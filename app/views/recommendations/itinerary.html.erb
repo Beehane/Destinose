@@ -32,7 +32,7 @@
 
 
         <div class="activity-card">
-          <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+          <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 300, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 300px;"></div>
 
           <h5><%= card1.name %></h5>
           <p><%= card1.description %></p>
@@ -105,7 +105,7 @@
 
       <% card1 = @trip_array.last %>
       <div class="activity-card last-card">
-        <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+        <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 300, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 300px;"></div>
 
           <h5><%= card1.name %></h5>
           <p><%= card1.description %></p>
