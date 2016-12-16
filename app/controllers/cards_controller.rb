@@ -34,7 +34,7 @@ class CardsController < ApplicationController
   def show
     parse_cookies
     params[:id] = Card.all.sample.id unless params[:id]
-    @current_strength = ((@liked.count.to_f / 50) * 100).round
+    @current_strength = ((((@disliked.count*0.4) + @liked.count).to_f / 80) * 100).round
     @current_card = Card.find(params[:id])
   end
 
