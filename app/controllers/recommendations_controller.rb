@@ -74,6 +74,8 @@ class RecommendationsController < ApplicationController
   end
 
   def largest_cluster
+    redirect_to regular_result_path if @cluster[0].nil?
+    @cluster.delete(-1)
     @largest_cluster = (@cluster.sort_by { |key, val| -val.count })[0][1]
   end
 
