@@ -59,15 +59,17 @@ class RecommendationsController < ApplicationController
       get_quote
     end
 
-    if @cluster.key?(1)
-      @centroid_b = find_centroid(@cluster[1])
-      @country_b = find_country(@cluster[1])
-    end
+    # FINDS THE SECOND AND THIRD LARGEST CLUSTERS
 
-    if @cluster.key?(2)
-      @centroid_c = find_centroid(@cluster[2])
-      @country_c = find_country(@cluster[2])
-    end
+    # if @cluster.key?(1)
+    #   @centroid_b = find_centroid(@cluster[1])
+    #   @country_b = find_country(@cluster[1])
+    # end
+
+    # if @cluster.key?(2)
+    #   @centroid_c = find_centroid(@cluster[2])
+    #   @country_c = find_country(@cluster[2])
+    # end
 
   end
 
