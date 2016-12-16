@@ -41,6 +41,8 @@ class RecommendationsController < ApplicationController
 
     @cluster = cluster_cards
 
+    largest_cluster
+
     if @cluster[0].nil?
       redirect_to regular_result_path
     else
@@ -67,6 +69,10 @@ class RecommendationsController < ApplicationController
       @country_c = find_country(@cluster[2])
     end
 
+  end
+
+  def largest_cluster
+    @cluster[0] = (@cluster.sort_by { |key, val| -val.count })[0][1]
   end
 
   def find_centroid(cluster)
