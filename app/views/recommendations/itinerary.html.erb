@@ -7,7 +7,7 @@
 <p class="explanation">here's everything you liked so far.</p>
 <p class="explanation">you'll need at least <strong>4 days</strong> for this trip.</p>
 
-<p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %>&emsp;|&emsp;<%= link_to 'grow this trip', trip_grow_path %>&emsp;|&emsp;<%= link_to 'start over', restart_path %></p>
+<p class="text-center"><%= link_to "save this trip", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'grow this trip', trip_grow_path %> | <%= link_to 'start over', restart_path %></p>
 
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -32,7 +32,7 @@
 
 
         <div class="activity-card">
-          <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+          <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 300, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 300px;"></div>
 
           <h5><%= card1.name %></h5>
           <p><%= card1.description %></p>
@@ -105,7 +105,7 @@
 
       <% card1 = @trip_array.last %>
       <div class="activity-card last-card">
-        <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 200, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 200px;"></div>
+        <div class="card-background" style="background-image: url(<%= cl_image_path(card1.image, width: 500, height: 300, quality: 80, crop: :fill, class: 'activity-card-photo') %>); background-size: cover; background-position: center; height: 300px;"></div>
 
           <h5><%= card1.name %></h5>
           <p><%= card1.description %></p>

@@ -3,7 +3,7 @@
 <h4 class="white-title">looks like you'd love</h4>
 <h3 class="white-title"><%= @country %></h3>
 <p class="explanation"><strong><%= (@cluster[0].count.fdiv(@liked.count) * 100).to_i  %>%</strong> of places you liked were in <%= @country %></p>
-<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %>&emsp;|&emsp;<%= link_to 'keep swiping', next_card_path %>&emsp;|&emsp;<%= link_to 'start over', restart_path %></p>
+<p class="text-center"><%= link_to "save this result", save_result_path(centroid: @centroid, country: @country) %> | <%= link_to 'keep swiping', next_card_path %> | <%= link_to 'start over', restart_path %></p>
 
 
 <%= render 'recommendation' %>
