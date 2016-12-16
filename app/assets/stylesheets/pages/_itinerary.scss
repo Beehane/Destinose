@@ -64,8 +64,8 @@
   width: 100%;
   padding: 20px;
   font-size: 16px;
-  font-weight: bold;
-  color: #666;
+  font-weight: bolder;
+  color: #999;
 }
 
 .itinerary-footer img {
@@ -127,4 +127,10 @@
   padding: 0;
   margin-top: 10px;
   color: #fff;
+}
+
+.time {
+  color: #B6B9B9;
+  font-weight: bolder;
+  margin-top: -10px;
 }
