@@ -43,11 +43,11 @@ class RecommendationsController < ApplicationController
 
     largest_cluster
 
-    if @cluster[0].nil?
+    if @largest_cluster.nil?
       redirect_to regular_result_path
     else
-      @centroid = find_centroid(@cluster[0])
-      address = Geocoder.search(@cluster[0][1]).first.data["address_components"]
+      @centroid = find_centroid(@largest_cluster)
+      address = Geocoder.search(@largest_cluster[1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
       @user_country = request.location.country
@@ -74,15 +74,10 @@ class RecommendationsController < ApplicationController
   end
 
   def largest_cluster
-    @cluster[0] = (@cluster.sort_by { |key, val| -val.count })[0][1]
+    @largest_cluster = (@cluster.sort_by { |key, val| -val.count })[0][1]
   end
 
   def find_centroid(cluster)
-    # all_lat = @cluster[0].map{ |val| val[0] }
-    # all_long = @cluster[0].map{ |val| val[1] }
-    # average_lat = (all_lat.sum / all_lat.count).round(6)
-    # average_long = (all_long.sum / all_long.count).round(6)
-    # return [average_lat, average_long]
     return Geocoder::Calculations.geographic_center(cluster)
   end
 

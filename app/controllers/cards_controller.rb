@@ -72,7 +72,7 @@ class CardsController < ApplicationController
   end
 
   def next_card
-    if @liked.count >= 30 || cookies[:trip] == "true"
+    if @liked.count >= 40 || cookies[:trip] == "true"
       cluster_biasing #the hunt begins
     else
       all_card_ids
