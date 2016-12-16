@@ -133,7 +133,7 @@ class RecommendationsController < ApplicationController
     end
     cookies[:liked] = @liked.to_json
     cookies[:disliked] = @disliked.to_json
-    cookies[:trip] = "true" if @liked.count > 9
+    cookies[:trip] = "true"
     redirect_to next_card_path
   end
 
