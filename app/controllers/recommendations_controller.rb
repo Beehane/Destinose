@@ -41,6 +41,8 @@ class RecommendationsController < ApplicationController
 
     @cluster = cluster_cards
 
+    largest_cluster
+
     if @cluster[0].nil?
       redirect_to regular_result_path
     else
@@ -57,16 +59,22 @@ class RecommendationsController < ApplicationController
       get_quote
     end
 
-    if @cluster.key?(1)
-      @centroid_b = find_centroid(@cluster[1])
-      @country_b = find_country(@cluster[1])
-    end
+    # FINDS THE SECOND AND THIRD LARGEST CLUSTERS
 
-    if @cluster.key?(2)
-      @centroid_c = find_centroid(@cluster[2])
-      @country_c = find_country(@cluster[2])
-    end
+    # if @cluster.key?(1)
+    #   @centroid_b = find_centroid(@cluster[1])
+    #   @country_b = find_country(@cluster[1])
+    # end
 
+    # if @cluster.key?(2)
+    #   @centroid_c = find_centroid(@cluster[2])
+    #   @country_c = find_country(@cluster[2])
+    # end
+
+  end
+
+  def largest_cluster
+    @cluster[0] = (@cluster.sort_by { |key, val| -val.count })[0][1]
   end
 
   def find_centroid(cluster)

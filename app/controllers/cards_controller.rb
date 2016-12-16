@@ -112,7 +112,7 @@ class CardsController < ApplicationController
 
   def near_card_ids
     @near_card_ids = []
-    Card.near(@likes_centroid, 2_000).each do |x|
+    Card.near(@likes_centroid, 1_800).each do |x|
     @near_card_ids << x.id
     end
   end
@@ -126,7 +126,7 @@ class CardsController < ApplicationController
 
 private
   def cluster_current_likes
-    dbscan = DBSCAN(@liked_coordinates, :epsilon => 2200, :min_points => 2, :distance => :haversine_distance2)
+    dbscan = DBSCAN(@liked_coordinates, :epsilon => 1800, :min_points => 2, :distance => :haversine_distance2)
     dbscan.results
   end
 
