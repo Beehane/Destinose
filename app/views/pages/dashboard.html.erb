@@ -19,7 +19,7 @@
       <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center">
         <h4>My Saved Destinations</h4>
         <% unless current_user.recommendations.empty? %>
-          <% current_user.recommendations.each do |reco| %>
+          <% current_user.recommendations.reverse.each do |reco| %>
           <% if reco.country.blank? %>
             <h4><%= link_to "Incomplete Search", existing_path(reco) %></h4>
           <% else %>
@@ -44,7 +44,7 @@
       <div class="col-sm-9 hidden-xs text-left dashbig">
         <h3>My Saved Destinations</h3>
         <% unless current_user.recommendations.empty? %>
-          <% current_user.recommendations.each do |reco| %>
+          <% current_user.recommendations.reverse.each do |reco| %>
           <% if reco.country.blank? %>
             <h4><%= link_to "Incomplete Search", existing_path(reco) %></h4>
           <% else %>
