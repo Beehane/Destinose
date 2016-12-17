@@ -13,5 +13,5 @@ DEFAULT_META = YAML.load_file(Rails.root.join('config/meta.yml'))
 
 # Plugin to enable Google Analytics
 
-Rubaidh::GoogleAnalytics.tracker_id = 'UA-63609634-2'
-Rubaidh::GoogleAnalytics.legacy_mode = true
+# Rubaidh::GoogleAnalytics.tracker_id = 'UA-63609634-2'
+# Rubaidh::GoogleAnalytics.legacy_mode = true
