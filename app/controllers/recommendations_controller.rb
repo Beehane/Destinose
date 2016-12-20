@@ -52,7 +52,7 @@ class RecommendationsController < ApplicationController
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
       @user_country = request.location.country
       if request.location.country_code == "RD"
-        @user_country_iso = "ES"
+        @user_country_iso = "GB"
       else
         @user_country_iso = request.location.country_code
       end
@@ -201,7 +201,6 @@ class RecommendationsController < ApplicationController
   end
 
   def get_quote
-    # change BCN to #{@user_country} before production!!!!
     url = "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/GB/EUR/en-ES/#{@user_country_iso}/#{@country_iso}/anytime/anytime?apiKey=#{ENV['SKYSCANNER']}"
     file = open(url).read
     skyscanner = JSON.parse(file)
