@@ -41,11 +41,10 @@ class RecommendationsController < ApplicationController
 
     @cluster = cluster_cards
 
-    largest_cluster
-
     if @cluster[0].nil?
       redirect_to regular_result_path
     else
+      largest_cluster
       @centroid = find_centroid(@largest_cluster)
       address = Geocoder.search(@largest_cluster[1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
@@ -74,7 +73,8 @@ class RecommendationsController < ApplicationController
   end
 
   def largest_cluster
-    redirect_to regular_result_path if @cluster[0].nil?
+    # this takes the cluster hash, deletes the noise array (-1),
+    # sorts the remainder by .count and returns the largest as a variable
     @cluster.delete(-1)
     @largest_cluster = (@cluster.sort_by { |key, val| -val.count })[0].try(:[], 1)
   end
