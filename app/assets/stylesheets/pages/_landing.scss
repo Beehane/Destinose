@@ -61,3 +61,27 @@ width: 300px;
   width: 80px;
 }
 
+.about-link {
+    position: absolute;
+    bottom: 5%;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    opacity: 0.3;
+    a {
+      color: #fff;
+
+    }
+    a:hover {
+      opacity: 1.0;
+    }
+}
+
+.email a {
+  color: #fff;
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
