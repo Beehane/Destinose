@@ -3,8 +3,8 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-$base-font: "Avenir", "Arial", "Helvetica Neue", sans-serif;
-$header-font: "Avenir", "Arial", "Helvetica Neue", sans-serif;
+$base-font: "Avenir", "Helvetica Neue", "Arial", "Roboto",  sans-serif;
+$header-font: "Avenir", "Helvetica Neue", "Arial", "Roboto", sans-serif;
 
 // Local fonts (uncomment following lines)
 // @font-face {
@@ -32,3 +32,5 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #8cbb35;
 $gray: #000000;
+$darkblue: #003e68;
+$lightblue: #a6fbff;

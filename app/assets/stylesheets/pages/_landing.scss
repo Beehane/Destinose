@@ -29,18 +29,18 @@
   font-size: 20px;
   border-radius: 30px;
   position: center;
-  background-color: #0195cc;
-  border-color: #0195cc;
+  background-color: $lightblue;
+  border-color: $lightblue;
   margin-top: 11px;
   padding-left: 30px;
   padding-right: 30px;
-  color: #fff;
+  color: $darkblue;
 }
 
 .btn-lg:hover {
-  background-color: #a6fbff;
-  border-color: #a6fbff;
-  color: #0195cc;
+  background-color: $darkblue;
+  border-color: $darkblue;
+  color: #fff;
 }
 
 .next {
