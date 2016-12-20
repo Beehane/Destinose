@@ -61,6 +61,8 @@ width: 300px;
   width: 80px;
 }
 
+// ABOUT PAGE STUFF //
+
 .about-link {
     position: absolute;
     bottom: 5%;
@@ -87,7 +89,15 @@ width: 300px;
 }
 
 .about-content {
+  margin-top: 20px;
   padding: 0 10px;
   max-width: 420px;
+}
+
+.bullet-point {
+  font-size: 19px;
+  top: -3px;
+  position: relative;
+  margin: 0px -6px;
 }
 
