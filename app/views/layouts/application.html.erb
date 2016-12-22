@@ -35,6 +35,9 @@
   <meta itemprop="name" content="<%= meta_title %>">
   <meta itemprop="description" content="<%= meta_description %>">
   <meta itemprop="image" content="<%= image_url(meta_image) %>">
+
+  <!-- Google Analytics tracking code -->
+  <%= render 'layouts/google_analytics' %>
 </head>
 
 <body>
@@ -54,7 +57,7 @@
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"  %>
   <%= javascript_include_tag "application" %>
 
-  <%= render 'layouts/google_analytics' %>
+
 
   <!--   <%#= javascript_include_tag "jquery.geocomplete.js" %> -->
 
