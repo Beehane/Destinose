@@ -38,6 +38,12 @@ class CardsController < ApplicationController
     @current_card = Card.find(params[:id])
   end
 
+  def nearby
+    parse_cookies
+    params[:id] = Card.all.sample.id unless params[:id]
+    @current_card = Card.find(params[:id])
+  end
+
   def restart
     cookies.delete(:liked)
     cookies.delete(:disliked)

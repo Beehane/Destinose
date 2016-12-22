@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources 'cards', only: [:show]
 
+  get '/nearby/:id', to: 'cards#nearby'
+
   get 'save_result', to: 'recommendations#save_to_recommendation'
 
   get 'swipe', to: 'cards#swipe'
