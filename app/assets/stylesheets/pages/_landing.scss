@@ -13,7 +13,7 @@
 .homepage-center-wrapper {
   color: white;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -59,6 +59,7 @@ width: 300px;
 
 .landing-icon {
   width: 80px;
+  margin-bottom: 10px;
 }
 
 // ABOUT PAGE STUFF //
@@ -66,6 +67,8 @@ width: 300px;
 .about-link {
     position: absolute;
     bottom: 5%;
+    margin: auto;
+    // margin: 50% 0 10px 0;
     text-align: center;
     width: 100%;
     color: #fff;
