@@ -1,7 +1,7 @@
 require 'dbscan'
 require 'open-uri'
 require 'nokogiri'
-# require 'geosort'
+require 'geosort'
 
 class RecommendationsController < ApplicationController
 
@@ -224,7 +224,7 @@ class RecommendationsController < ApplicationController
     @cards_near.each do |x|
       @trip_array << x if @liked.include? x.id
     end
-    # @trip_array = sort(@trip_array) # Sorts the cards into travelling salesman order
+    @trip_array = sort(@trip_array) # Sorts the cards into travelling salesman order
   end
 
   private
