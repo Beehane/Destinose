@@ -10,17 +10,17 @@ module GeoSort
       paths = []
       path_lengths = []
 
-      for start in starts do
+      for start in starts
         array = data.dup()  # Make copy of array so I can freely use destructive methods
         array.delete(start)
         path = [start]
         path_length = []
 
-        while array.any? do
+        while array.any?
           a = [path.last.latitude, path.last.longitude] # Take last point on the path as starting point
           distances = []
 
-          for point in array do
+          for point in array
             distances << d(a, [point.latitude, point.longitude]) # Distance between last point on path and every other point
           end
 
