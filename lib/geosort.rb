@@ -78,6 +78,7 @@ module GeoSort
     def dotProd(u, v)
       u[0]*v[0] + u[1]*v[1] + u[2]*v[2]
     end
+
   end
 
   def sort(data) # This is the method you care about and, in fact, the only one exposed by the module.
