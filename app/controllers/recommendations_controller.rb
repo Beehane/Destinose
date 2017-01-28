@@ -1,7 +1,7 @@
 require 'dbscan'
 require 'open-uri'
 require 'nokogiri'
-require 'geosort'
+# require 'geosort'
 
 class RecommendationsController < ApplicationController
 
