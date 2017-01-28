@@ -23,3 +23,5 @@ module Destinose
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+config.eager_load_paths += ["#{Rails.root}/lib"]
