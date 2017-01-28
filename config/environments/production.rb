@@ -4,9 +4,6 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  # Getting Heroku to re-load the lib path to include Geosort
-  config.eager_load_paths += ["#{Rails.root}/lib"]
-
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

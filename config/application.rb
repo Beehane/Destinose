@@ -23,3 +23,8 @@ module Destinose
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+Rails.application.configure do
+    # Getting Heroku to re-load the lib path to include Geosort
+  config.eager_load_paths += ["#{Rails.root}/lib"]
+end
