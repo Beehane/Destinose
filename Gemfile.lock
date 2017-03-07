@@ -102,6 +102,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
+    google-analytics-rails (1.1.0)
     hashie (3.4.6)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -268,6 +269,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.7)
   geocoder
   gmaps4rails
+  google-analytics-rails (~> 1.1)
   jbuilder (~> 2.5)
   jquery-rails
   launchy
