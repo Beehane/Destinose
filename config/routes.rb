@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources 'cards', only: [:show]
 
+  get '/nearby/:id', to: 'cards#nearby', as: 'nearby'
+
   get 'save_result', to: 'recommendations#save_to_recommendation'
 
   get 'swipe', to: 'cards#swipe'
@@ -38,6 +40,8 @@ Rails.application.routes.draw do
   get 'landing', to: 'pages#landing'
 
   get 'trip_grow', to: 'cards#trip_grow'
+
+  get 'about', to: 'pages#about'
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

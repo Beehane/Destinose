@@ -13,7 +13,7 @@
 .homepage-center-wrapper {
   color: white;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -29,18 +29,18 @@
   font-size: 20px;
   border-radius: 30px;
   position: center;
-  background-color: #0195cc;
-  border-color: #0195cc;
+  background-color: $lightblue;
+  border-color: $lightblue;
   margin-top: 11px;
   padding-left: 30px;
   padding-right: 30px;
-  color: #fff;
+  color: $darkblue;
 }
 
 .btn-lg:hover {
-  background-color: #a6fbff;
-  border-color: #a6fbff;
-  color: #0195cc;
+  background-color: $darkblue;
+  border-color: $darkblue;
+  color: #fff;
 }
 
 .next {
@@ -54,10 +54,53 @@
 }
 
 .logo {
-width: 250px;
+width: 300px;
 }
 
 .landing-icon {
   width: 80px;
+  margin-bottom: 10px;
+}
+
+// ABOUT PAGE STUFF //
+
+.about-link {
+    position: absolute;
+    bottom: 5%;
+    margin: auto;
+    // margin: 50% 0 10px 0;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    opacity: 0.3;
+    a {
+      color: #fff;
+
+    }
+    a:hover {
+      opacity: 1.0;
+    }
+}
+
+.email a {
+  color: #fff;
+  text-decoration: none;
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.about-content {
+  margin-top: 20px;
+  padding: 0 10px;
+  max-width: 420px;
+}
+
+.bullet-point {
+  font-size: 19px;
+  top: -3px;
+  position: relative;
+  margin: 0px -6px;
 }
 

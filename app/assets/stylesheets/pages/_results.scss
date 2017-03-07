@@ -69,3 +69,30 @@
   top: 0;
   width: 100%;
 }
+
+.preview-trip {
+  // background-image: linear-gradient(to bottom left, #FADB09 0%, #FC4B07 100%);
+  background-color: $green;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 20px;
+  font-size: 21px;
+  font-weight: bolder;
+  color: #fff;
+  -webkit-animation: background 6s cubic-bezier(1,0,0,1);
+  animation: background 6s cubic-bezier(1,0,0,1);
+}
+
+
+@-webkit-keyframes background {
+  0% { background-color: #333; }
+  100% { background-color: $green; }
+}
+
+@keyframes background {
+  0% { background-color: #333; }
+  100% { background-color: $green; }
+}
+

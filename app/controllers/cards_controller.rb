@@ -38,6 +38,13 @@ class CardsController < ApplicationController
     @current_card = Card.find(params[:id])
   end
 
+  def nearby
+    parse_cookies
+    params[:id] = Card.all.sample.id unless params[:id]
+    @current_card = Card.find(params[:id])
+    find_card_country
+  end
+
   def restart
     cookies.delete(:liked)
     cookies.delete(:disliked)
@@ -96,13 +103,22 @@ class CardsController < ApplicationController
     @likes_centroid = Geocoder::Calculations.geographic_center(@likes_cluster[0])
 
     near_card_ids
+
     @seen = @liked + @disliked
     if @near_card_ids - @seen == []
       redirect_to out_of_cards_path
+    elsif cookies[:trip] == "true"
+      next_card_id = (@near_card_ids - @seen).sample
+      redirect_to nearby_path(id: next_card_id)
     else
       next_card_id = (@near_card_ids - @seen).sample
       redirect_to card_path(id: next_card_id)
     end
+  end
+
+  def find_card_country
+    address = Geocoder.search([@current_card.latitude, @current_card.longitude]).first.data["address_components"]
+    @card_country = address.find { |component| component["types"].include? 'country' }["long_name"]
   end
 
   def trip_grow

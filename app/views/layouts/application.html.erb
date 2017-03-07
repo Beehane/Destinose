@@ -20,6 +20,8 @@
   <meta property="og:image" content="<%= image_url(meta_image) %>" />
   <meta property="og:description" content="<%= meta_description %>" />
   <meta property="og:site_name" content="<%= meta_title %>" />
+  <meta property="fb:app_id" content="1009238982515764" />
+
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
@@ -33,6 +35,9 @@
   <meta itemprop="name" content="<%= meta_title %>">
   <meta itemprop="description" content="<%= meta_description %>">
   <meta itemprop="image" content="<%= image_url(meta_image) %>">
+
+  <!-- Google Analytics tracking code -->
+  <%= render 'layouts/google_analytics' %>
 </head>
 
 <body>
@@ -51,6 +56,9 @@
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js"  %>
   <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"  %>
   <%= javascript_include_tag "application" %>
+
+
+
   <!--   <%#= javascript_include_tag "jquery.geocomplete.js" %> -->
 
   <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
