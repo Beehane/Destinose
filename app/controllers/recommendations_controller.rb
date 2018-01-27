@@ -57,7 +57,6 @@ class RecommendationsController < ApplicationController
         @user_country_iso = Geocoder.search(request.location.country).first.country_code
       end
       get_quote
-      byebug
     end
 
     # FINDS THE SECOND AND THIRD LARGEST CLUSTERS
