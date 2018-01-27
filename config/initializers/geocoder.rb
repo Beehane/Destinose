@@ -19,4 +19,4 @@ Geocoder.configure(
   # units: :mi,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
 :units => :km,
-:timeout => 20)
+:timeout => 20,)
