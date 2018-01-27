@@ -16,6 +16,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module Destinose
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -27,4 +28,5 @@ end
 Rails.application.configure do
     # Getting Heroku to re-load the lib path to include Geosort
   config.eager_load_paths += ["#{Rails.root}/lib"]
+  config.assets.initialize_on_precompile = false
 end
