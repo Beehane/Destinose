@@ -50,17 +50,22 @@ class RecommendationsController < ApplicationController
       address = Geocoder.search(@largest_cluster[1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
-        if request.location == "Reserved" || nil
-          @user_country = "United Kingdom"
-        else
-          @user_country = request.location.country
-        end
 
-        if request.location.country_code == "RD" || nil
-          @user_country_iso = "GB"
-        else
-          @user_country_iso = request.location.country_code
-        end
+      @user_country = "United Kingdom"
+      @user_country_iso "GB"
+
+        #THIS BIT IS BROKEN ON HEROKU
+        #if request.location == "Reserved" || nil
+        #  @user_country = "United Kingdom"
+        #else
+        #  @user_country = request.location.country
+        #end
+
+        #if request.location.country_code == "RD" || nil
+        #  @user_country_iso = "GB"
+        #else
+        #  @user_country_iso = request.location.country_code
+        #end
 
       get_quote
     end
