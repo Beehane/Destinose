@@ -52,7 +52,7 @@ class RecommendationsController < ApplicationController
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
 
       @user_country = "United Kingdom"
-      @user_country_iso "GB"
+      @user_country_iso = "GB"
 
         #THIS BIT IS BROKEN ON HEROKU
         #if request.location == "Reserved" || nil
