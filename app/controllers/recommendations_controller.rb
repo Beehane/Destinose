@@ -50,7 +50,7 @@ class RecommendationsController < ApplicationController
       address = Geocoder.search(@largest_cluster[1]).first.data["address_components"]
       @country = address.find { |component| component["types"].include? 'country' }["long_name"]
       @country_iso = address.find { |component| component["types"].include? 'country' }["short_name"]
-        if request.location.country == "Reserved" || nil
+        if request.location == "Reserved" || nil
           @user_country = "United Kingdom"
         else
           @user_country = request.location.country
